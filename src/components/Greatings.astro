@@ -1,0 +1,76 @@
+---
+const { styleClass } = Astro.props
+---
+
+<section class={`relative h-screen w-full justify-center overflow-hidden ${styleClass}`}>
+  <header class="w-full h-full flex flex-col justify-center md:justify-start md:pt-28">
+    <h1 class="text-[8rem] sm:text-[10rem] md:text-[12rem] lg:text-[14rem] 2xl:text-[18rem] text-right font-semibold leading-none animate-flip-up animate-once">
+      hola
+    </h1>
+    <p class="max-sm:hidden text-right whitespace-nowrap text-[6rem] md:text-[8rem] lg:text-[10rem] 2xl:text-[14rem] opacity-70 animate-flip-up animate-once animate-delay-300">Soy Esteban</p>
+    <div class="marquee rotate-3 text-[6rem] sm:text-[6rem] [--duration:10s] md:[--duration:20s] [--gap:1rem] md:[--gap:4rem]">
+      <div class="marquee__group">
+        <p>Soy Esteban</p>
+        <span>|</span>
+        <p>Soy Esteban</p>
+        <span>|</span>
+      </div>
+      <div class="marquee__group">
+        <p>Soy Esteban</p>
+        <span>|</span>
+        <p>Soy Esteban</p>
+        <span>|</span>
+      </div>
+    </div>
+  </header>
+  <footer class="absolute bottom-4 sm:bottom-8 w-full flex items-end justify-between">
+    <p class="left-0 font-bold balance text-3xl md:text-5xl leading-6 md:leading-10 [text-wrap:balance] animate-flip-up animate-once animate-delay-[600ms]">
+      Tu Visión
+      <span class="block">Mi Creatividad</span>
+    </p>
+    <p class="hidden sm:inline right-0 text-xl md:text-3xl bottom-4 sm:bottom-8 animate-flip-up animate-once animate-delay-[900ms]">drummes.12@gmail.com</p>
+  </footer>
+</section>
+
+<style>
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+
+  .marquee__group {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: scroll var(--duration) linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__group {
+      animation-play-state: paused;
+    }
+  }
+
+  @media not all and (max-width: 640px) {
+    .marquee__group {
+      display: none;
+      animation: none;
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+</style>

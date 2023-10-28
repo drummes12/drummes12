@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Greating from '../components/Greating.astro';
+import Greatings from '../components/Greatings.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -8,23 +8,15 @@ import Greating from '../components/Greating.astro';
 		<h1 class="text-6xl">Drummes12</h1>
 		<nav class="grow">
 			<ul class="flex items-center justify-around">
+				<li>Sobre mí</li>
 				<li>Proyectos</li>
 				<li>Experiencia</li>
-				<li>Sobre mí</li>
 				<li>Contactame</li>
 			</ul>
 		</nav>
 	</header>
-	<main class="h-screen flex flex-col p-8">
-		<section class="relative flex flex-col grow justify-center overflow-hidden">
-			<Greating />
-			<p class="absolute text-5xl font-bold balance bottom-0 left-0 leading-10 [text-wrap:balance]">
-				Tu Visión
-				<span class="block">Mi Creatividad</span>
-			</p>
-			<footer>
-				<p class="absolute text-3xl bottom-0 right-0">drummes.12@gmail.com</p>
-			</footer>
-		</section>
+	<main class="h-screen overflow-y-auto px-4 sm:px-8 snap-y snap-mandatory">
+		<Greatings styleClass="snap-center" />
+		<Greatings styleClass="snap-center" />
 	</main>
 </Layout>
