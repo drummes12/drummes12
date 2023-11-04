@@ -1,22 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Greatings from '../components/Greatings.astro';
+import Layout from '../layouts/Layout.astro'
+import Greatings from '../components/Greatings.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-	<header class="fixed flex items-center w-screen">
-		<h1 class="text-6xl">Drummes12</h1>
-		<nav class="grow">
-			<ul class="flex items-center justify-around">
-				<li>Sobre mí</li>
-				<li>Proyectos</li>
-				<li>Experiencia</li>
-				<li>Contactame</li>
-			</ul>
-		</nav>
-	</header>
-	<main class="h-screen overflow-y-auto px-4 sm:px-8 snap-y snap-mandatory">
-		<Greatings styleClass="snap-center" />
-		<Greatings styleClass="snap-center" />
-	</main>
+<Layout title='Drummes12'>
+	<div class='overflow-y-auto px-4 sm:px-8 snap-y snap-mandatory'>
+		<Greatings styleClass='snap-center' />
+		<Greatings styleClass='snap-center' />
+	</div>
 </Layout>

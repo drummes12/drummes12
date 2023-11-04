@@ -1,0 +1,115 @@
+---
+import LinkedIn from '../icons/LinkedIn.astro'
+import Mail from '../icons/Mail.astro'
+import WhatsApp from '../icons/WhatsApp.astro'
+---
+
+<nav
+  class='fixed z-10 h-full flex sm:items-center -translate-x-full sm:hover:translate-x-0 transition duration-300 ease-in-out group'
+  id='navbar-location'
+>
+  <div class='flex flex-col h-full w-screen sm:max-w-[20rem] bg-gray-800/10 backdrop-blur-md rounded-r-xl'>
+    <header class='p-8 w-full flex justify-between'>
+      <a href='#top' class='text-4xl font-bold select-none'>Drummes12</a>
+      <button data-collapse-close='navbar-location'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          class='sm:hidden text-white/70 hover:text-white/90 transition duration-300 ease-in-out'
+          width='36'
+          height='36'
+          viewBox='0 0 24 24'
+          stroke-width='2'
+          stroke='currentColor'
+          fill='none'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+        >
+          <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+          <path d='M18 6l-12 12'></path>
+          <path d='M6 6l12 12'></path>
+        </svg>
+      </button>
+    </header>
+    <main class='grow'>
+      <ul class='text-2xl text-white/70 flex flex-col font-medium pt-8 rounded-lg'>
+        <li>
+          <a href='#' class='nav-list relative block py-4 pl-8 hover:text-white/90' aria-current='location'>About</a>
+        </li>
+        <li>
+          <a href='#' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Projects</a>
+        </li>
+        <li>
+          <a href='#' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Experience</a>
+        </li>
+        <li>
+          <a href='#' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Contact me</a>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <ul class='flex justify-around m-8 p-4 text-2xl text-white/70'>
+        <li>
+          <a href='#' class='hover:text-white/90'><LinkedIn className='h-8 aspect-square' /></a>
+        </li>
+        <li>
+          <a href='#' class='hover:text-white/90'><WhatsApp className='h-8 aspect-square' /></a>
+        </li>
+        <li>
+          <a href='#' class='hover:text-white/90'><Mail className='h-8 aspect-square' /></a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+  <div
+    class='hidden sm:block absolute -right-20 p-4 group-hover:-translate-x-full group-hover:bg-transparent group-hover:backdrop-blur-0 bg-gray-800/10 backdrop-blur-md rounded-r-xl transition-all duration-300'
+  >
+    <span class='sr-only'>Open main menu</span>
+    <img src='/logo.png' alt='Logo de Drummes12' class='h-12 aspect-square' />
+  </div>
+  <button
+    data-collapse-open='navbar-location'
+    type='button'
+    class='absolute sm:hidden -right-20 p-4 bg-gray-800/10 backdrop-blur-md rounded-ee-xl'
+  >
+    <span class='sr-only'>Open main menu</span>
+    <img src='/logo.png' alt='Logo de Drummes12' class='h-12 aspect-square' />
+  </button>
+</nav>
+
+<script>
+  const navbar = document.getElementById('navbar-location')
+  const buttonOpen = document.querySelector('[data-collapse-open="navbar-location"]')
+  const buttonClose = document.querySelector('[data-collapse-close="navbar-location"]')
+
+  buttonOpen.addEventListener('click', () => {
+    navbar.classList.toggle('-translate-x-full')
+  })
+  buttonClose.addEventListener('click', () => {
+    navbar.classList.toggle('-translate-x-full')
+  })
+</script>
+
+<style>
+  .nav-list::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .nav-list:hover::before {
+    opacity: 1;
+  }
+
+  [aria-current]::before {
+    opacity: 1;
+  }
+  [aria-current] {
+    color: rgb(255 255 255 / 0.9);
+  }
+</style>
