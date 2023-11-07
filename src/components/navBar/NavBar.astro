@@ -2,6 +2,8 @@
 import LinkedIn from '../icons/LinkedIn.astro'
 import Mail from '../icons/Mail.astro'
 import WhatsApp from '../icons/WhatsApp.astro'
+
+import Menu from './Menu.astro'
 ---
 
 <nav
@@ -31,20 +33,7 @@ import WhatsApp from '../icons/WhatsApp.astro'
       </button>
     </header>
     <main class='grow'>
-      <ul class='text-2xl text-white/70 flex flex-col font-medium pt-8 rounded-lg'>
-        <li>
-          <a href='#' class='nav-list relative block py-4 pl-8 hover:text-white/90' aria-current='location'>About</a>
-        </li>
-        <li>
-          <a href='#' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Projects</a>
-        </li>
-        <li>
-          <a href='#' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Experience</a>
-        </li>
-        <li>
-          <a href='#' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Contact me</a>
-        </li>
-      </ul>
+      <Menu />
     </main>
     <footer>
       <ul class='flex justify-around m-8 p-4 text-2xl text-white/70'>
@@ -55,7 +44,7 @@ import WhatsApp from '../icons/WhatsApp.astro'
           <a href='#' class='hover:text-white/90'><WhatsApp className='h-8 aspect-square' /></a>
         </li>
         <li>
-          <a href='#' class='hover:text-white/90'><Mail className='h-8 aspect-square' /></a>
+          <a href='mailto:drummes.12@gmail.com?subject=%C2%A1Dise%C3%B1emos%20y%20creamos%20juntos%20una%20buena%20idea!&body=%C2%A1Hola%20Drummes12!%0D%0A%0D%0AQuisiera%20saber%20si%20podemos%20trabajar%20juntos%20en%20un%20proyecto.%0D%0A%0D%0ASaludos%2C' class='hover:text-white/90'><Mail className='h-8 aspect-square' /></a>
         </li>
       </ul>
     </footer>
@@ -88,28 +77,3 @@ import WhatsApp from '../icons/WhatsApp.astro'
     navbar.classList.toggle('-translate-x-full')
   })
 </script>
-
-<style>
-  .nav-list::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background-color: white;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .nav-list:hover::before {
-    opacity: 1;
-  }
-
-  [aria-current]::before {
-    opacity: 1;
-  }
-  [aria-current] {
-    color: rgb(255 255 255 / 0.9);
-  }
-</style>
