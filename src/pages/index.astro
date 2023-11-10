@@ -1,10 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Greating from '../components/Greating.astro'
+import Lamps from '../components/Lamps.astro';
+import About from '../components/About.astro';
 ---
 
 <Layout title='Drummes12'>
-	<div class='h-screen px-4 sm:px-8'>
-		<Greating styleClass='snap-center' />
-	</div>
+  <div id='wall' class='fixed h-screen w-screen -z-10'></div>
+  <Lamps />
+  <div class='z-10 h-screen px-4 sm:px-8'>
+    <Greating styleClass='snap-center' />
+    <About />
+  </div>
 </Layout>
+
+<style>
+  #wall {
+    background-color: black;
+    opacity: 0.8;
+    background-image: linear-gradient(#cccccc08 1px, transparent 1px), linear-gradient(to right, #cccccc08 1px, black 1px);
+    background-size: 20px 20px;
+  }
+</style>
