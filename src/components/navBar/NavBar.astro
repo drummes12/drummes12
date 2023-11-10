@@ -1,4 +1,5 @@
 ---
+import CloseIcon from '../icons/CloseIcon.astro'
 import LinkedIn from '../icons/LinkedIn.astro'
 import Mail from '../icons/Mail.astro'
 import WhatsApp from '../icons/WhatsApp.astro'
@@ -7,29 +8,17 @@ import Menu from './Menu.astro'
 ---
 
 <nav
-  class='fixed z-10 h-full flex sm:items-center -translate-x-full sm:hover:translate-x-0 transition duration-300 ease-in-out group'
+  class='fixed z-50 h-full flex sm:items-center -translate-x-full sm:hover:translate-x-0 sm:hover:shadow-black sm:hover:shadow-xl transition duration-300 ease-in-out group'
   id='navbar-location'
 >
-  <div class='flex flex-col h-full w-screen sm:max-w-[20rem] bg-gray-800/10 backdrop-blur-md rounded-r-xl'>
+  <div class='flex flex-col h-full w-screen sm:max-w-[20rem] bg-gray-200/10 backdrop-blur-md rounded-r-xl'>
     <header class='p-8 w-full flex justify-between'>
-      <a href='#top' class='text-4xl font-DMSans font-bold select-none'>Drummes12</a>
-      <button data-collapse-close='navbar-location'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          class='sm:hidden text-white/70 hover:text-white/90 transition duration-300 ease-in-out'
-          width='36'
-          height='36'
-          viewBox='0 0 24 24'
-          stroke-width='2'
-          stroke='currentColor'
-          fill='none'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-        >
-          <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
-          <path d='M18 6l-12 12'></path>
-          <path d='M6 6l12 12'></path>
-        </svg>
+      <a href='#top' class='text-4xl font-bold select-none'>Drummes12</a>
+      <button
+        class='sm:hidden text-white/70 hover:text-white/90 transition duration-300 ease-in-out'
+        data-collapse-close='navbar-location'
+      >
+        <CloseIcon />
       </button>
     </header>
     <main class='grow'>
@@ -44,13 +33,16 @@ import Menu from './Menu.astro'
           <a href='#' class='hover:text-white/90'><WhatsApp className='h-8 aspect-square' /></a>
         </li>
         <li>
-          <a href='mailto:drummes.12@gmail.com?subject=%C2%A1Dise%C3%B1emos%20y%20creamos%20juntos%20una%20buena%20idea!&body=%C2%A1Hola%20Drummes12!%0D%0A%0D%0AQuisiera%20saber%20si%20podemos%20trabajar%20juntos%20en%20un%20proyecto.%0D%0A%0D%0ASaludos%2C' class='hover:text-white/90'><Mail className='h-8 aspect-square' /></a>
+          <a
+            href='mailto:drummes.12@gmail.com?subject=%C2%A1Dise%C3%B1emos%20y%20creamos%20juntos%20una%20buena%20idea!&body=%C2%A1Hola%20Drummes12!%0D%0A%0D%0AQuisiera%20saber%20si%20podemos%20trabajar%20juntos%20en%20un%20proyecto.%0D%0A%0D%0ASaludos%2C'
+            class='hover:text-white/90'><Mail className='h-8 aspect-square' /></a
+          >
         </li>
       </ul>
     </footer>
   </div>
   <div
-    class='hidden sm:block absolute -right-20 p-4 group-hover:-translate-x-full group-hover:bg-transparent group-hover:backdrop-blur-0 bg-gray-800/10 backdrop-blur-md rounded-r-xl transition-all duration-300'
+    class='hidden sm:block absolute -right-20 p-4 group-hover:-translate-x-full group-hover:bg-transparent group-hover:backdrop-blur-0 bg-gray-200/10 backdrop-blur-md rounded-r-xl transition-all duration-300'
   >
     <span class='sr-only'>Open main menu</span>
     <img src='/logo.png' alt='Logo de Drummes12' class='h-12 aspect-square' />
@@ -58,7 +50,7 @@ import Menu from './Menu.astro'
   <button
     data-collapse-open='navbar-location'
     type='button'
-    class='absolute sm:hidden -right-20 p-4 bg-gray-800/10 backdrop-blur-md rounded-ee-xl'
+    class='absolute sm:hidden -right-20 p-4 bg-gray-200/10 backdrop-blur-md rounded-ee-xl'
   >
     <span class='sr-only'>Open main menu</span>
     <img src='/logo.png' alt='Logo de Drummes12' class='h-12 aspect-square' />

@@ -7,8 +7,10 @@ const { className } = Astro.props
 ---
 
 <svg
-  xmlns='http://www.w3.org/2000/svg'
   class={className}
+  xmlns='http://www.w3.org/2000/svg'
+  width='36'
+  height='36'
   viewBox='0 0 24 24'
   stroke-width='2'
   stroke='currentColor'
@@ -17,6 +19,6 @@ const { className } = Astro.props
   stroke-linejoin='round'
 >
   <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
-  <path d='M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0'></path>
-  <path d='M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28'></path>
+  <path d='M18 6l-12 12'></path>
+  <path d='M6 6l12 12'></path>
 </svg>

@@ -1,4 +1,5 @@
 ---
+import GreatingFooter from './GreatingFooter.astro'
 interface Props {
   styleClass: string
 }
@@ -35,69 +36,8 @@ const { styleClass } = Astro.props
       </div>
     </div>
   </header>
-  <footer class='absolute bottom-4 sm:bottom-8 w-full flex items-end justify-between'>
-    <div class='grow left-0 font-bold text-3xl md:text-5xl leading-6 md:leading-10 [text-wrap:balance]'>
-      <p class='animate-flip-up animate-once animate-delay-[600ms] flex items-end gap-4'>
-        Tu
-        <span
-          id='word-client'
-          class='text-red-200 font-mono block whitespace-nowrap border-r-2 animate-typing6 overflow-hidden w-[6.1ch]'
-          >VISIÓN</span
-        >
-      </p>
-      <p class='animate-flip-up animate-once animate-delay-[600ms] flex items-center gap-4'>
-        Mi
-        <span
-          id='word-own'
-          class='text-green-200 font-mono block whitespace-nowrap border-r-2 animate-typing11 overflow-hidden w-[11.1ch]'
-          >CREATIVIDAD</span
-        >
-      </p>
-    </div>
-
-    <button
-      class='hidden sm:inline right-0 opacity-50 text-xl md:text-3xl bottom-4 sm:bottom-8 animate-flip-up animate-once animate-delay-[900ms]'
-    >
-      drummes.12@gmail.com
-    </button>
-  </footer>
+  <GreatingFooter />
 </section>
-
-<script>
-  export const WORDS_CLIENT = ['VISIÓN', 'OBJETIVO', 'META', 'PROPÓSITO']
-  export const WORDS_OWN = ['CREATIVIDAD', 'PASIÓN', 'HABILIDAD', 'TALENTO']
-
-  const wordClient = document.getElementById('word-client')
-  const wordOwn = document.getElementById('word-own')
-
-  setInterval(() => {
-    animateWord(wordClient, WORDS_CLIENT)
-  }, 7000)
-
-  setInterval(() => {
-    animateWord(wordOwn, WORDS_OWN)
-  }, 11000)
-
-  function getRandomWord(arr: string[]) {
-    return arr[Math.floor(Math.random() * arr.length)]
-  }
-
-  export function animateWord(wordElement: HTMLElement, wordList: string[]) {
-    const randomWord = getRandomWord(wordList)
-    const wordLength = randomWord.length
-
-    wordElement.style.width = '0px'
-    wordElement.classList.remove('animate-typing')
-    wordElement.style.animation = 'none'
-    wordElement.style.width = `${wordLength}.1ch`
-
-    setTimeout(() => {
-      wordElement.classList.add('animate-typing')
-      wordElement.innerText = randomWord
-      wordElement.style.animation = `typing 1s steps(${wordLength}), blink 0.5s infinite step-end alternate`
-    }, 10)
-  }
-</script>
 
 <style>
   .marquee {
