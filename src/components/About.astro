@@ -1,5 +1,13 @@
-<section class='h-screen w-screen flex flex-col justify-center items-center'>
-  <article class="w-3/4 max-w-4xl bg-black/5 backdrop-blur-md p-4">
+---
+interface Props {
+  styleClass?: string
+}
+
+const { styleClass } = Astro.props
+---
+
+<section class={`h-screen w-full flex flex-col justify-center items-center ${styleClass}`}>
+  <article class="w-3/4 max-w-4xl bg-black/10 backdrop-blur-md p-4">
     <h3 class='text-md text-white/70 font-bold'>About me</h3>
     <p class='text-3xl text-white/90 [text-wrap:balance]'>
       A little bit about me, let's see... I'm Esteban a mechatronics engineer, with a passion for creativity and

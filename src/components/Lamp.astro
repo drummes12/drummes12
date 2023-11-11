@@ -1,0 +1,43 @@
+<div class='-z-20 left-0 bottom-0 absolute h-screen w-full flex justify-center items-center [&>div]:absolute [&>div]:w-4 [&>div]:h-2/3 [&>div]:rounded-full'>
+  <div class='lamp lamp-1 bg-green-950'></div>
+  <div class='lamp lamp-1 bg-white shadow-neon3-border'></div>
+  <div class='lamp lamp-1 bg-white shadow-neon3'></div>
+  <div class='lamp lamp-2 bg-green-950'></div>
+  <div class='lamp lamp-2 bg-white shadow-neon3-border'></div>
+  <div class='lamp lamp-2 bg-white shadow-neon3'></div>
+</div>
+
+<style>
+  .lamp {
+    view-timeline-axis: block;
+    animation-fill-mode: both;
+    animation-range: entry 25% cover 50%;
+  }
+  .lamp-1 {
+    view-timeline-name: --lamp-1;
+    animation-timeline: --lamp-1;
+    animation-name: pan-lamp-1;
+  }
+  .lamp-2 {
+    view-timeline-name: --lamp-2;
+    animation-timeline: --lamp-2;
+    animation-name: pan-lamp-2;
+  }
+
+  @keyframes pan-lamp-1 {
+    from {
+      transform: translateX(-50vw);
+    }
+    to {
+      transform: translateX(50vw);
+    }
+  }
+  @keyframes pan-lamp-2 {
+    from {
+      transform: translateX(50vw);
+    }
+    to {
+      transform: translateX(-50vw);
+    }
+  }
+</style>

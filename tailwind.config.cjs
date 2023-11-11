@@ -6,12 +6,15 @@ module.exports = {
       backgroundColor: {
         'neon1': '#00ff00',
         'neon2': '#ff00ff',
+        'neon3': '#00FFff'
       },
       boxShadow: {
         'neon1': '0 0 240px 60px #00ff00',
         'neon1-border': '0 0 20px 10px #00ff00',
         'neon2': '0 0 240px 60px #ff00FF',
-        'neon2-border': '0 0 20px 10px #ff00FF'
+        'neon2-border': '0 0 20px 10px #ff00FF',
+        'neon3': '0 0 240px 60px #00FFFF',
+        'neon3-border': '0 0 20px 10px #00FFFF'
       },
       backgroundImage: {
         'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
