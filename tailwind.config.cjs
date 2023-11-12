@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      fontFamily: {
+        'dm-mono': ['DM Mono', 'monospace'],
+      },
       backgroundColor: {
         'neon1': '#00ff00',
         'neon2': '#ff00ff',
@@ -24,6 +27,8 @@ module.exports = {
         typing11: 'typing 1s steps(11) 0.6s, blink 0.5s infinite step-end alternate',
         flicker1: 'flicker1 3.5s infinite',
         flicker2: 'flicker2 4s infinite',
+        'marquee-left': 'marquee-left 100s linear infinite',
+        'marquee-right': 'marquee-right 100s linear infinite',
       },
       keyframes: {
         typing: {
@@ -39,6 +44,14 @@ module.exports = {
         flicker2: {
           '0%, 15.999%, 24%, 60.999%, 70%, 72.999%, 85%, 100%': { opacity: 1 },
           '16%, 23.999%, 61%, 69.999%, 73%, 84.999%': { opacity: 0 },
+        },
+        'marquee-left': {
+          from: { transform: 'translateX(-2%)' },
+          to: { transform: 'translateX(-102%)' },
+        },
+        'marquee-right': {
+          from: { transform: 'translateX(-102%)' },
+          to: { transform: 'translateX(-2%)' },
         }
       },
     },

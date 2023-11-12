@@ -1,10 +1,10 @@
 ---
-import CloseIcon from '../icons/CloseIcon.astro'
-import LinkedIn from '../icons/LinkedIn.astro'
-import Mail from '../icons/Mail.astro'
-import WhatsApp from '../icons/WhatsApp.astro'
+import CloseIcon from '@icons/CloseIcon.astro'
+import LinkedIn from '@icons/LinkedIn.astro'
+import Mail from '@icons/Mail.astro'
+import WhatsApp from '@icons/WhatsApp.astro'
 
-import Menu from './Menu.astro'
+import Menu from '@components/Menu.astro'
 ---
 
 <nav
@@ -13,7 +13,7 @@ import Menu from './Menu.astro'
 >
   <div class='flex flex-col h-full w-screen sm:max-w-[20rem] bg-gray-200/10 backdrop-blur-md sm:rounded-r-xl'>
     <header class='p-8 w-full flex justify-between'>
-      <a href='#top' class='text-4xl font-bold select-none'>Drummes12</a>
+      <a href='#greating' class='text-4xl font-bold select-none'>Drummes12</a>
       <button
         class='sm:hidden text-white/70 hover:text-white/90 transition duration-300 ease-in-out'
         data-collapse-close='navbar-location'

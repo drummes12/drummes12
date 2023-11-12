@@ -1,9 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Greating from '../components/Greating.astro'
-import Lamps from '../components/Lamps.astro'
-import About from '../components/About.astro'
-import Lamp from '../components/Lamp.astro';
+import Layout from '@layouts/Layout.astro'
+import Greating from '@components/Greating.astro'
+import Lamps from '@components/Lamps.astro'
+import About from '@components/About.astro'
+import Lamp from '@components/Lamp.astro'
+import Projects from '@components/Projects.astro'
 ---
 
 <Layout title='Drummes12' navBar>
@@ -11,7 +12,8 @@ import Lamp from '../components/Lamp.astro';
   <div class='relative px-4 sm:px-8'>
     <Lamps />
     <Lamp />
-    <Greating />
-    <About />
+    <Greating componentId='greating' />
+    <About componentId='about' />
   </div>
+  <Projects componentId='projects' />
 </Layout>
