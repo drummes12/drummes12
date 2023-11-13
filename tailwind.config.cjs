@@ -23,8 +23,7 @@ module.exports = {
         'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
       },
       animation: {
-        typing6: 'typing 1s steps(6) 0.6s, blink 0.5s infinite step-end alternate',
-        typing11: 'typing 1s steps(11) 0.6s, blink 0.5s infinite step-end alternate',
+        typing: 'typing 15s steps(12) 0.6s infinite',
         flicker1: 'flicker1 3.5s infinite',
         flicker2: 'flicker2 4s infinite',
         'marquee-left': 'marquee-left 100s linear infinite',
@@ -32,7 +31,8 @@ module.exports = {
       },
       keyframes: {
         typing: {
-          from: { width: 0 },
+          '0%, 100%': { width: 0 },
+          '5%, 95%': { width: '12.1ch' },
         },
         blink: {
           '50%': { 'border-color': 'transparent' },

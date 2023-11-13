@@ -4,7 +4,7 @@
       Tu
       <span
         id='word-client'
-        class='text-red-200 font-dm-mono block whitespace-nowrap border-r-2 animate-typing6 overflow-x-clip w-[6.1ch] motion-reduce:border-none'
+        class='text-red-200 font-dm-mono block whitespace-nowrap animate-typing overflow-x-clip w-[12.1ch]'
         >VISION</span
       >
     </p>
@@ -12,7 +12,7 @@
       Mi
       <span
         id='word-own'
-        class='text-green-200 font-dm-mono block whitespace-nowrap border-r-2 animate-typing11 overflow-x-clip w-[11.1ch] motion-reduce:border-none'
+        class='text-green-200 font-dm-mono block whitespace-nowrap animate-typing overflow-x-clip w-[12ch]'
         >CREATIVIDAD</span
       >
     </p>
@@ -32,31 +32,20 @@
   const wordClient = document.getElementById('word-client')
   const wordOwn = document.getElementById('word-own')
 
-  setInterval(() => {
+  wordClient.addEventListener('animationiteration', () => {
     animateWord(wordClient, WORDS_CLIENT)
-  }, 7000)
+  })
 
-  setInterval(() => {
+  wordOwn.addEventListener('animationiteration', () => {
     animateWord(wordOwn, WORDS_OWN)
-  }, 11000)
+  })
 
   export function animateWord(wordElement: HTMLElement, wordList: string[]) {
     const randomWord = getRandomWord(wordList)
-    const wordLength = randomWord.length
+    wordElement.innerText = randomWord
+  }
 
-    wordElement.style.width = '0px'
-    wordElement.classList.remove('animate-typing')
-    wordElement.style.animation = 'none'
-    wordElement.style.width = `${wordLength}.1ch`
-
-    setTimeout(() => {
-      wordElement.classList.add('animate-typing')
-      wordElement.innerText = randomWord
-      wordElement.style.animation = `typing 1s steps(${wordLength}), blink 0.5s infinite step-end alternate`
-    }, 10)
-
-    function getRandomWord(arr: string[]) {
-      return arr[Math.floor(Math.random() * arr.length)]
-    }
+  function getRandomWord(arr: string[]) {
+    return arr[Math.floor(Math.random() * arr.length)]
   }
 </script>
