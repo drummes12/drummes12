@@ -1,4 +1,13 @@
-<div class='h-full snap-center flex flex-col justify-center'>
+---
+interface Props {
+  styleClass?: string
+  componentId?: string
+}
+
+const { styleClass, componentId } = Astro.props
+---
+
+<div id={componentId} class={`${styleClass} h-full snap-center flex flex-col justify-center`}>
   <img
     class='h-4/5 aspect-video object-cover'
     src='https://i.pinimg.com/564x/4e/d4/4f/4ed44f3f62ac37ff596eee01e560ded8.jpg'

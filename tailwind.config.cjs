@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'dm-mono': ['DM Mono', 'monospace'],
+        'rubik-mono': ['Rubik Mono One', 'monospace'],
       },
       backgroundColor: {
         'neon1': '#00ff00',

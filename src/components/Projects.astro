@@ -10,14 +10,58 @@ const { styleClass, componentId } = Astro.props
 
 <section
   id={componentId}
-  class={`px-4 sm:px-8 py-20 flex flex-col items-center justify-center gap-10 relative h-[100dvh] md:h-screen w-full overflow-hidden ${styleClass}`}
+  class={`grid auto-rows-fr grid-cols-2 md:grid-cols-3 gap-4 relative px-4 sm:px-8 py-12 h-[100dvh] md:h-screen w-full overflow-hidden [&>div]:bg-gray-200/10 [&>div]:backdrop-blur-sm ${styleClass}`}
 >
   <div
     id='bg-techs'
-    class='absolute -z-10 top-0 left-0 h-full font-dm-mono -rotate-12 origin-left text-6xl font-bold opacity-10'
+    class='absolute bg-transparent backdrop-filter-none -z-10 top-0 left-0 h-full font-dm-mono -rotate-12 origin-left text-6xl font-bold opacity-10'
   >
   </div>
-  <article class='w-full h-full overflow-hidden'>
+  <div class='col-span-1 md:col-span-1 rounded-lg'></div>
+  <div class='col-span-1 md:col-span-2 rounded-lg'></div>
+  <header
+    class='relative col-span-2 rounded-xl p-4 select-none [&>h1]:[font-size:_clamp(1rem,10vw,10rem)] [&>h1]:md:[font-size:_clamp(2rem,8vw,10rem)] [&>h1]:font-rubik-mono overflow-hidden flex flex-col justify-center items-center md:items-end'
+  >
+    <h1>
+      <span class='hover:opacity-0'>P</span>
+      <span class='hover:opacity-0'>R</span>
+      <span class='hover:opacity-0'>O</span>
+      <span class='hover:opacity-0'>J</span>
+      <span class='hover:opacity-0'>E</span>
+      <span class='hover:opacity-0'>C</span>
+      <span class='hover:opacity-0'>T</span>
+      <span class='hover:opacity-0'>S</span>
+    </h1>
+    <h1 class='absolute -z-10 translate-y-4''>
+      <span class='opacity-30'>P</span>
+      <span class='opacity-30'>R</span>
+      <span class='opacity-30'>O</span>
+      <span class='opacity-30'>J</span>
+      <span class='opacity-30'>E</span>
+      <span class='opacity-30'>C</span>
+      <span class='opacity-30'>T</span>
+      <span class='opacity-30'>S</span>
+    </h1>
+    <h1 class='absolute -z-20 translate-y-8'>
+      <span class='opacity-5'>P</span>
+      <span class='opacity-5'>R</span>
+      <span class='opacity-5'>O</span>
+      <span class='opacity-5'>J</span>
+      <span class='opacity-5'>E</span>
+      <span class='opacity-5'>C</span>
+      <span class='opacity-5'>T</span>
+      <span class='opacity-5'>S</span>
+    </h1>
+  </header>
+  <div class='row-span-1 col-span-1 rounded-lg'></div>
+  <div class='col-span-1 row-span-2 md:row-span-1 md:col-span-2 rounded-lg'></div>
+  <div class='row-span-1 col-span-1 rounded-lg'></div>
+  <!-- <ProjectItem styleClass='col-span-4' />
+  <ProjectItem />
+  <ProjectItem />
+  <ProjectItem />
+  <ProjectItem /> -->
+  <!-- <article class='w-full h-full overflow-hidden'>
     <div
       class='relative w-full h-full flex gap-6 snap-x snap-mandatory overflow-x-auto [&>div]:snap-center [&>div]:shrink-0'
     >
@@ -29,23 +73,7 @@ const { styleClass, componentId } = Astro.props
       <ProjectItem />
       <div><div class='shrink-0 w-4 sm:w-48'></div></div>
     </div>
-  </article>
-  <article class='bg-black/10 backdrop-blur-md rounded-xl px-24 py-4'>
-    <h1 class='text-6xl'>PROJECTS</h1>
-  </article>
-  <article class='w-full h-full overflow-hidden'>
-    <div
-      class='relative w-full h-full flex gap-6 snap-x snap-mandatory overflow-x-auto [&>div]:snap-center [&>div]:shrink-0'
-    >
-      <div><div class='shrink-0 w-4 sm:w-48'></div></div>
-      <ProjectItem />
-      <ProjectItem />
-      <ProjectItem />
-      <ProjectItem />
-      <ProjectItem />
-      <div><div class='shrink-0 w-4 sm:w-48'></div></div>
-    </div>
-  </article>
+  </article> -->
 </section>
 
 <script>
