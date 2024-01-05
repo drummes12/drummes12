@@ -1,0 +1,69 @@
+---
+interface Props {
+  componentId?: string
+}
+
+const { componentId } = Astro.props
+
+const EXPERIENCES = [
+  {
+    title: 'Creador de Contenido',
+    company: 'Twitch',
+    location: '🌐',
+    startDate: '2023-Ene',
+    endDate: 'Actualidad',
+    description:
+      'Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.',
+  },
+  {
+    title: 'Principal Frontend Engineer',
+    company: 'Adevinta Spain',
+    location: '🇪🇸',
+    startDate: '2022-Ene',
+    endDate: '2023-Ene',
+    description:
+      'Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.',
+  },
+  {
+    title: 'Software Engineer Junior',
+    company: 'Clevertech',
+    location: '🇨🇴',
+    startDate: '2020-Ene',
+    endDate: '2020-Dic',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl quis aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc vitae nisl',
+  },
+  {
+    title: 'Frontend Developer',
+    company: 'Vercel',
+    location: '🌐',
+    startDate: '2021-Ene',
+    endDate: '2021-Dic',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl quis aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc vitae nisl',
+  },
+]
+---
+
+<section id={componentId} class='h-full md:h-screen w-full relative p-8 flex flex-col'>
+  <header class='sticky top-2 w-full h-full flex justify-end'>
+    <h2 class='text-right font-extrabold text-[4rem] sm:text-8xl text-gray-500/50'>Experience</h2>
+  </header>
+  <ol class='relative text-right'>
+    {
+      EXPERIENCES.map((experience) => (
+        <li class='text-lg font-light border-e border-white/90 [&>*]:mr-5'>
+          <div class='absolute size-2 rounded-full mt-3 -end-6 border border-white/90 bg-white/90' />
+          <time class='text-gray-300 text-sm font-dm-mono'>
+            {experience.startDate} - {experience.endDate}
+          </time>
+          <h3 class='-mb-2 text-medium'>
+            {experience.location} {experience.title}
+          </h3>
+          <h4 class='text-gray-400 text-sm font-bold'>{experience.company}</h4>
+          <p class='text-gray-300 text-base max-w-[60ch] text-pretty pb-12'>{experience.description}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

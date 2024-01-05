@@ -12,16 +12,16 @@ const { styleClass, componentId } = Astro.props
   id={componentId}
   class={`grid auto-rows-fr grid-cols-2 md:grid-cols-3 gap-4 relative px-4 sm:px-8 py-12 h-[100dvh] md:h-screen w-full overflow-hidden [&>div]:bg-gray-200/10 [&>div]:backdrop-blur-sm ${styleClass}`}
 >
-  <div
-    id='bg-techs'
-    class='absolute bg-transparent backdrop-filter-none -z-10 top-0 left-0 h-full font-dm-mono -rotate-12 origin-left text-6xl font-bold opacity-10'
-  >
-  </div>
-  <div class='col-span-1 md:col-span-1 rounded-lg'></div>
+  <ProjectItem class='col-span-1 md:col-span-1 rounded-lg' />
   <div class='col-span-1 md:col-span-2 rounded-lg'></div>
   <header
     class='relative col-span-2 rounded-xl p-4 select-none [&>h1]:[font-size:_clamp(1rem,10vw,10rem)] [&>h1]:md:[font-size:_clamp(2rem,8vw,10rem)] [&>h1]:font-rubik-mono overflow-hidden flex flex-col justify-center items-center md:items-end'
   >
+    <div
+      id='bg-techs'
+      class='absolute bg-transparent backdrop-filter-none -z-10 top-0 left-0 h-full font-dm-mono -rotate-12 origin-left text-6xl font-bold opacity-10'
+    >
+    </div>
     <h1>
       <span class='hover:opacity-0'>P</span>
       <span class='hover:opacity-0'>R</span>
@@ -32,7 +32,7 @@ const { styleClass, componentId } = Astro.props
       <span class='hover:opacity-0'>T</span>
       <span class='hover:opacity-0'>S</span>
     </h1>
-    <h1 class='absolute -z-10 translate-y-4''>
+    <h1 class='absolute -z-10 translate-y-4' '>
       <span class='opacity-30'>P</span>
       <span class='opacity-30'>R</span>
       <span class='opacity-30'>O</span>
