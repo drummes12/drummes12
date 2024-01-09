@@ -1,16 +1,16 @@
 ---
 import ProjectItem from './ProjectItem.astro'
 interface Props {
-  styleClass?: string
+  class?: string
   componentId?: string
 }
 
-const { styleClass, componentId } = Astro.props
+const { class: className, componentId } = Astro.props
 ---
 
 <section
   id={componentId}
-  class={`grid auto-rows-fr grid-cols-2 md:grid-cols-3 gap-4 relative px-4 sm:px-8 py-12 h-[100dvh] md:h-screen w-full overflow-hidden [&>div]:bg-gray-200/10 [&>div]:backdrop-blur-sm ${styleClass}`}
+  class={`grid auto-rows-fr grid-cols-2 md:grid-cols-3 gap-4 relative px-4 sm:px-8 py-12 h-[100dvh] md:h-screen w-full overflow-hidden [&>div]:bg-gray-200/10 [&>div]:backdrop-blur-sm ${className}`}
 >
   <ProjectItem class='col-span-1 md:col-span-1 rounded-lg' />
   <div class='col-span-1 md:col-span-2 rounded-lg'></div>
@@ -56,7 +56,7 @@ const { styleClass, componentId } = Astro.props
   <div class='row-span-1 col-span-1 rounded-lg'></div>
   <div class='col-span-1 row-span-2 md:row-span-1 md:col-span-2 rounded-lg'></div>
   <div class='row-span-1 col-span-1 rounded-lg'></div>
-  <!-- <ProjectItem styleClass='col-span-4' />
+  <!-- <ProjectItem class='col-span-4' />
   <ProjectItem />
   <ProjectItem />
   <ProjectItem />

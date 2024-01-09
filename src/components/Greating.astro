@@ -2,14 +2,14 @@
 import GreatingFooter from '@components/GreatingFooter.astro'
 import Lamps from './Lamps.astro';
 interface Props {
-  styleClass?: string
+  class?: string
   componentId?: string
 }
 
-const { styleClass, componentId } = Astro.props
+const { class: className, componentId } = Astro.props
 ---
 
-<section id={componentId} class={`relative h-[100svh] md:h-screen w-full justify-center ${styleClass}`}>
+<section id={componentId} class={`relative h-[100svh] md:h-screen w-full justify-center ${className}`}>
   <Lamps />
   <header class='w-full h-full flex flex-col justify-center md:justify-start md:pt-28 px-4 md:px-8'>
     <h1
