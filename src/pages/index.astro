@@ -1,20 +1,15 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import Greating from '@components/Greating.astro'
-import Lamps from '@components/Lamps.astro'
 import About from '@components/About.astro'
-import Lamp from '@components/Lamp.astro'
 import Projects from '@components/Projects.astro'
 import Experience from '@components/Experience.astro'
 ---
 
 <Layout title='Drummes12' navBar>
   <div id='wall' class='absolute top-0 left-0 h-full w-full -z-20'></div>
-  <div class='relative px-4 sm:px-8'>
-    <Lamps />
-    <Lamp />
-    <Greating componentId='greating' />
-    <About componentId='about' />
-  </div>
+  <Greating componentId='greating' />
+  <About componentId='about' />
   <Experience componentId='experience' />
+  <Projects componentId='projects' />
 </Layout>

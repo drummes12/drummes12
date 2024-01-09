@@ -1,4 +1,5 @@
 ---
+import Lamp from './Lamp.astro';
 interface Props {
   styleClass?: string
   componentId?: string
@@ -7,9 +8,10 @@ interface Props {
 const { styleClass, componentId } = Astro.props
 ---
 
-<section id={componentId} class={`h-[100svh] md:h-screen w-full flex flex-col justify-center items-center ${styleClass}`}>
+<section id={componentId} class={`relative h-[100svh] md:h-screen w-full flex flex-col justify-center items-center ${styleClass}`}>
+  <Lamp />
   <article class="w-3/4 max-w-4xl bg-black/10 backdrop-blur-md p-4 rounded-xl">
-    <h3 class='text-md text-white/70 font-bold'>About me</h3>
+    <h3 class='text-md text-gray-400/80 font-bold'>About me</h3>
     <p class='text-xl md:text-3xl text-white/90 [text-wrap:balance]'>
       A little bit about me, let's see... I'm Esteban a mechatronics engineer, with a passion for creativity and
       technology. I've worked for the past 5 years in the automotive industry, and I'm currently working as a software
