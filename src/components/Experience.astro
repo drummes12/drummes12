@@ -58,19 +58,21 @@ const EXPERIENCES = [
     <header class='sticky top-1/4 flex justify-end md:mb-8'>
       <h2 class='text-right font-extrabold text-[4rem] sm:text-8xl text-gray-500/50'>Experience</h2>
     </header>
-    <ol class='relative text-right'>
+    <ol class='relative text-right border-e border-white/90'>
       {
         EXPERIENCES.map((experience) => (
-          <li class='group text-lg font-light border-e border-white/90 [&>*]:mr-5 flex flex-col items-end md:hover:bg-white/5 md:hover:rounded-xl p-6 md:hover:backdrop-blur-sm'>
-            <div class='absolute size-2 rounded-full mt-3 -end-6 border border-white/90 bg-white/90 md:group-hover:animate-bounce' />
+          <li class='group text-lg font-light [&>*]:mr-5 flex flex-col items-end md:hover:bg-white/5 md:hover:rounded-s-xl p-6 md:hover:backdrop-blur-sm md:transition'>
+            <div class='absolute size-2 rounded-full mt-3 -end-6 border border-white/90 bg-white/90 md:group-hover:animate-ping md:group-hover:animate-infinite' />
             <time class='text-gray-300 text-sm font-dm-mono'>
               {experience.startDate} - {experience.endDate}
             </time>
             <h3 class='md:group-hover:-mb-2 -mb-2 text-medium'>
               {experience.location} {experience.title}
             </h3>
-            <h4 class='md:group-hover:block md:hidden text-gray-400 text-sm font-bold'>{experience.company}</h4>
-            <p class='md:group-hover:block md:hidden text-gray-300 text-base max-w-[50ch] text-pretty'>
+            <h4 class='md:group-hover:block md:hidden md:opacity-0 md:group-hover:opacity-100 md:transition-all text-gray-400 text-sm font-bold'>
+              {experience.company}
+            </h4>
+            <p class='md:group-hover:block md:hidden md:group-hover:opacity-100 md:transition-all text-gray-300 text-base max-w-[50ch] text-pretty'>
               {experience.description}
             </p>
           </li>
