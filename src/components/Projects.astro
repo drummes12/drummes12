@@ -17,11 +17,6 @@ const { class: className, componentId } = Astro.props
   <header
     class='relative col-span-2 rounded-xl p-4 select-none [&>h1]:[font-size:_clamp(1rem,10vw,10rem)] [&>h1]:md:[font-size:_clamp(2rem,8vw,10rem)] [&>h1]:font-rubik-mono overflow-hidden flex flex-col justify-center items-center md:items-end'
   >
-    <div
-      id='bg-techs'
-      class='absolute bg-transparent backdrop-filter-none -z-10 top-0 left-0 h-full font-dm-mono -rotate-12 origin-left text-6xl font-bold opacity-10'
-    >
-    </div>
     <h1>
       <span class='hover:opacity-0'>P</span>
       <span class='hover:opacity-0'>R</span>
@@ -74,68 +69,3 @@ const { class: className, componentId } = Astro.props
       <div><div class='shrink-0 w-4 sm:w-48'></div></div>
     </div>
   </article> -->
-</section>
-
-<script>
-  const TECHS = [
-    { name: 'REACT', color: '#61dafb', svg: '/logos/react.svg' },
-    { name: 'NEXT', color: '#fff', svg: '/logos/nextjs.svg' },
-    { name: 'VUE', color: '#41b883', svg: '/logos/vuejs.svg' },
-    { name: 'VITE', color: '#646cff', svg: '/logos/vite.svg' },
-    { name: 'VANILLA', color: '#f7df1e', svg: '/logos/javascript.svg' },
-    { name: 'NODE', color: '#68a063', svg: '/logos/nodejs.svg' },
-    { name: 'WORDPRESS', color: '#21759b', svg: '/logos/wordpress.svg' },
-    { name: 'EXPRESS', color: '#fff', svg: '/logos/express.svg' },
-    { name: 'MONGODB', color: '#4db33d', svg: '/logos/mongodb.svg' },
-    { name: 'POSTGRESQL', color: '#336791', svg: '/logos/postgresql.svg' },
-    { name: 'GRAPHQL', color: '#e535ab', svg: '/logos/graphql.svg' },
-    { name: 'MYSQL', color: '#4479a1', svg: '/logos/mysql.svg' },
-    { name: 'NETLIFY', color: '#00c7b7', svg: '/logos/netlify.svg' },
-    { name: 'VERCEL', color: '#fff', svg: '/logos/vercel.svg' },
-    { name: 'AWS', color: '#232f3e', svg: '/logos/aws.svg' },
-    { name: 'DOCKER', color: '#2496ed', svg: '/logos/docker.svg' },
-    { name: 'FIREBASE', color: '#f7c52b', svg: '/logos/firebase.svg' },
-    { name: 'TAILWIND', color: '#06b6d4', svg: '/logos/tailwind.svg' },
-  ]
-  const bgTechs = document.getElementById('bg-techs')
-
-  for (let i = 0; i < 30; i++) {
-    if (i % 2 === 0) {
-      createLineTechs('left')
-    } else {
-      createLineTechs('right')
-    }
-  }
-
-  function createLineTechs(direction = 'left') {
-    const techsContainer = document.createElement('div')
-    techsContainer.classList.add('flex')
-
-    for (let i = 0; i < 2; i++) {
-      const lineTechs = document.createElement('div')
-      lineTechs.classList.add('whitespace-nowrap', 'text-center', 'h-14', 'flex', 'items-center')
-      if (direction === 'left') {
-        lineTechs.classList.add('animate-marquee-left')
-        TECHS.forEach((tech) => {
-          const techEl = document.createElement('span')
-          techEl.innerText = tech.name
-          techEl.style.color = tech.color
-          techEl.classList.add('inline-block', 'mx-2')
-          lineTechs.appendChild(techEl)
-        })
-      } else {
-        lineTechs.classList.add('animate-marquee-right')
-        TECHS.forEach((tech) => {
-          const techEl = document.createElement('img')
-          techEl.src = tech.svg
-          techEl.alt = `${tech.name} Logo`
-          techEl.style.color = tech.color
-          techEl.classList.add('inline-block', 'mx-4', 'h-14', 'aspect-square')
-          lineTechs.appendChild(techEl)
-        })
-      }
-      techsContainer.appendChild(lineTechs)
-    }
-    bgTechs.appendChild(techsContainer)
-  }
-</script>
