@@ -1,6 +1,6 @@
-<ul class='text-2xl text-white/70 flex flex-col font-medium pt-8 rounded-lg'>
+<ul class='max-sm:hidden text-2xl text-white/70 flex flex-col font-medium pt-8 rounded-lg'>
   <li>
-    <a href='#about' class='nav-list relative block py-4 pl-8 hover:text-white/90' aria-current='location'>About</a>
+    <a href='#about' class='nav-list relative block py-4 pl-8 hover:text-white/90'>About</a>
   </li>
   <li>
     <a href='#experience' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Experience</a>
@@ -12,6 +12,71 @@
     <a href='#contact-me' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Contact me</a>
   </li>
 </ul>
+
+<ul class='sm:hidden text-2xl text-white/70 flex flex-col font-medium pt-8 rounded-lg'>
+  <li>
+    <a
+      href='#about'
+      class='nav-list relative block py-4 pl-8 hover:text-white/90' data-collapse-close='navbar-location'>About</a
+    >
+  </li>
+  <li>
+    <a
+      href='#experience'
+      class='nav-list relative block py-4 pl-8 hover:text-white/90'
+      data-collapse-close='navbar-location'>Experience</a
+    >
+  </li>
+  <li>
+    <a
+      href='#projects'
+      class='nav-list relative block py-4 pl-8 hover:text-white/90'
+      data-collapse-close='navbar-location'>Projects</a
+    >
+  </li>
+  <li>
+    <a
+      href='#contact-me'
+      class='nav-list relative block py-4 pl-8 hover:text-white/90'
+      data-collapse-close='navbar-location'>Contact me</a
+    >
+  </li>
+</ul>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const sections = ['about', 'experience', 'projects', 'contact-me']
+
+    sections.forEach((sectionId) => {
+      const optionMenu = document.querySelector(`[href="#${sectionId}"]`)
+
+      if (isSectionVisible(sectionId)) {
+        sections.forEach((otherSectionId) => {
+          const otherOptionMenu = document.querySelector(`[href="#${otherSectionId}"]`)
+          otherOptionMenu?.removeAttribute('aria-current')
+        })
+
+        optionMenu?.setAttribute('aria-current', 'location')
+      } else {
+        optionMenu?.removeAttribute('aria-current')
+      }
+    })
+  })
+
+  function isSectionVisible(sectionId) {
+    const section = document.getElementById(sectionId)
+
+    if (section) {
+      const rect = section.getBoundingClientRect()
+      const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)
+      const visibilityRatio = visibleHeight / rect.height
+
+      return visibilityRatio > 0.3
+    }
+
+    return false
+  }
+</script>
 
 <style>
   .nav-list::before {

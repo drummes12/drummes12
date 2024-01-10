@@ -13,7 +13,10 @@ import Menu from '@components/Menu.astro'
 >
   <div class='flex flex-col h-full w-screen sm:max-w-[20rem] bg-gray-200/10 backdrop-blur-md sm:rounded-r-xl'>
     <header class='p-8 w-full flex justify-between'>
-      <a href='#greating' class='text-4xl font-bold select-none'>Drummes12</a>
+      <a href='#greating' class='text-4xl font-bold select-none max-sm:hidden'>Drummes12</a>
+      <a href='#greating' class='text-4xl font-bold select-none sm:hidden' data-collapse-close='navbar-location'
+        >Drummes12</a
+      >
       <button
         class='sm:hidden text-white/70 hover:text-white/90 transition duration-300 ease-in-out'
         data-collapse-close='navbar-location'
@@ -60,20 +63,17 @@ import Menu from '@components/Menu.astro'
 <script>
   const navbar = document.getElementById('navbar-location')
   const buttonOpen = document.querySelector('[data-collapse-open="navbar-location"]')
-  const buttonClose = document.querySelector('[data-collapse-close="navbar-location"]')
+  const buttonsOptions = document.querySelectorAll('[data-collapse-close="navbar-location"]')
+  const body = document.body
 
   buttonOpen.addEventListener('click', () => {
     navbar.classList.toggle('-translate-x-full')
+    body.classList.toggle('overflow-y-hidden')
   })
-  buttonClose.addEventListener('click', () => {
-    navbar.classList.toggle('-translate-x-full')
-  })
-
-  const desktopMediaQuery = window.matchMedia('(min-width: 640px')
-
-  desktopMediaQuery.addEventListener('change', (event) => {
-    if (event.matches) {
-      navbar.classList.add('-translate-x-full')
-    }
-  })
+  buttonsOptions.forEach((buttonOption) =>
+    buttonOption.addEventListener('click', () => {
+      navbar.classList.toggle('-translate-x-full')
+      body.classList.toggle('overflow-y-hidden')
+    })
+  )
 </script>
