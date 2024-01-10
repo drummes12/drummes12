@@ -19,9 +19,10 @@ import VueJs from './logos/VueJs.astro'
 import Wordpress from './logos/Wordpress.astro'
 ---
 
+<!-- TODO: revisar el margen -->
 <div class='relative w-5/6 max-w-5xl mx-auto my-8'>
   <div class='relative flex flex-col w-full overflow-hidden gap-y-4 [--gap:1rem] [--duration:40s]'>
-    <div class='flex gap-[--gap] w-max overflow-x-hidden font-dm-mono origin-left text-6xl font-bold'>
+    <div class='flex gap-[--gap] w-max overflow-hidden font-dm-mono origin-left text-6xl font-bold'>
       <div class='flex gap-[--gap] w-max animate-marquee items-stretch h-14'>
         <p class='text-[#00d8ff]'>REACT</p>
         <p class='text-[#fff]'>NEXT</p>
@@ -34,9 +35,9 @@ import Wordpress from './logos/Wordpress.astro'
         <p class='text-[#41a247]'>MONGODB</p>
         <p class='text-[#336791]'>POSTGRESQL</p>
         <p class='text-[#e10098]'>GRAPHQL</p>
+        <p class='text-[#fff]'>VERCEL</p>
         <p class='text-[#00758F]'>MYSQL</p>
         <p class='text-[#20C6B7]'>NETLIFY</p>
-        <p class='text-[#fff]'>VERCEL</p>
         <p class='text-[#fff]'>AWS</p>
         <p class='text-[#2396ED]'>DOCKER</p>
         <p class='text-[#ffa712]'>FIREBASE</p>
@@ -54,16 +55,16 @@ import Wordpress from './logos/Wordpress.astro'
         <p class='text-[#41a247]'>MONGODB</p>
         <p class='text-[#336791]'>POSTGRESQL</p>
         <p class='text-[#e10098]'>GRAPHQL</p>
+        <p class='text-[#fff]'>VERCEL</p>
         <p class='text-[#00758F]'>MYSQL</p>
         <p class='text-[#20C6B7]'>NETLIFY</p>
-        <p class='text-[#fff]'>VERCEL</p>
         <p class='text-[#fff]'>AWS</p>
         <p class='text-[#2396ED]'>DOCKER</p>
         <p class='text-[#ffa712]'>FIREBASE</p>
         <p class='text-[#38bdf8]'>TAILWIND</p>
       </div>
     </div>
-    <div class='flex gap-[--gap] w-max overflow-x-hidden'>
+    <div class='flex gap-[--gap] w-max overflow-hidden'>
       <div
         class='flex gap-[--gap] w-max animate-marquee [animation-direction:reverse] items-stretch h-14 [&>div]:h-full [&>div]:w-32 [&>div]:rounded-xl [&>div]:bg-white/5 [&>div]:grid [&>div]:place-content-center'
       >
@@ -78,9 +79,9 @@ import Wordpress from './logos/Wordpress.astro'
         <div><MongoDB class='text-[#41a247] size-10' /></div>
         <div><PostgreSQL class='text-[#336791] size-10' /></div>
         <div><Graphql class='text-[#e10098] size-10' /></div>
+        <div><Vercel class='text-[#fff] size-10' /></div>
         <div><MySQL class='text-[#00758F] size-10' /></div>
         <div><Netlify class='text-[#20C6B7] size-10' /></div>
-        <div><Vercel class='text-[#fff] size-10' /></div>
         <div><Aws class='text-[#fff] size-10' /></div>
         <div><Docker class='text-[#2396ED] size-10' /></div>
         <div><Firebase class='text-[#ffa712] size-10' /></div>
@@ -100,9 +101,9 @@ import Wordpress from './logos/Wordpress.astro'
         <div><MongoDB class='text-[#41a247] size-10' /></div>
         <div><PostgreSQL class='text-[#336791] size-10' /></div>
         <div><Graphql class='text-[#e10098] size-10' /></div>
+        <div><Vercel class='text-[#fff] size-10' /></div>
         <div><MySQL class='text-[#00758F] size-10' /></div>
         <div><Netlify class='text-[#20C6B7] size-10' /></div>
-        <div><Vercel class='text-[#fff] size-10' /></div>
         <div><Aws class='text-[#fff] size-10' /></div>
         <div><Docker class='text-[#2396ED] size-10' /></div>
         <div><Firebase class='text-[#ffa712] size-10' /></div>
@@ -110,6 +111,6 @@ import Wordpress from './logos/Wordpress.astro'
       </div>
     </div>
   </div>
-  <div class='absolute left-0 top-0 h-full w-1/4 bg-gradient-to-r from-[#121212] to-transparent'></div>
-  <div class='absolute right-0 top-0 h-full w-1/4 bg-gradient-to-l from-[#121212] to-transparent'></div>
+  <div class='absolute -left-1 top-0 h-full w-1/4 bg-gradient-to-r from-[#121212] to-transparent'></div>
+  <div class='absolute -right-1 top-0 h-full w-1/4 bg-gradient-to-l from-[#121212] to-transparent'></div>
 </div>

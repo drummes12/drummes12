@@ -27,15 +27,15 @@ import Menu from '@components/Menu.astro'
     <footer>
       <ul class='flex justify-around m-8 p-4 text-2xl text-white/70'>
         <li>
-          <a href='#' class='hover:text-white/90'><LinkedIn className='h-8 aspect-square' /></a>
+          <a href='#' class='hover:text-white/90'><LinkedIn class='h-8 aspect-square' /></a>
         </li>
         <li>
-          <a href='#' class='hover:text-white/90'><WhatsApp className='h-8 aspect-square' /></a>
+          <a href='#' class='hover:text-white/90'><WhatsApp class='h-8 aspect-square' /></a>
         </li>
         <li>
           <a
             href='mailto:drummes.12@gmail.com?subject=%C2%A1Dise%C3%B1emos%20y%20creamos%20juntos%20una%20buena%20idea!&body=%C2%A1Hola%20Drummes12!%0D%0A%0D%0AQuisiera%20saber%20si%20podemos%20trabajar%20juntos%20en%20un%20proyecto.%0D%0A%0D%0ASaludos%2C'
-            class='hover:text-white/90'><Mail className='h-8 aspect-square' /></a
+            class='hover:text-white/90'><Mail class='h-8 aspect-square' /></a
           >
         </li>
       </ul>
@@ -67,5 +67,13 @@ import Menu from '@components/Menu.astro'
   })
   buttonClose.addEventListener('click', () => {
     navbar.classList.toggle('-translate-x-full')
+  })
+
+  const desktopMediaQuery = window.matchMedia('(min-width: 640px')
+
+  desktopMediaQuery.addEventListener('change', (event) => {
+    if (event.matches) {
+      navbar.classList.add('-translate-x-full')
+    }
   })
 </script>
