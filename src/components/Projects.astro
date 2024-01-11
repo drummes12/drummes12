@@ -1,71 +1,147 @@
 ---
+import Aws from '@components/logos/Aws.astro'
+import Docker from '@components/logos/Docker.astro'
+import Express from '@components/logos/Express.astro'
+import Firebase from '@components/logos/Firebase.astro'
+import Graphql from '@components/logos/Graphql.astro'
+import JavaScript from '@components/logos/JavaScript.astro'
+import MongoDB from '@components/logos/MongoDB.astro'
+import MySQL from '@components/logos/MySQL.astro'
+import Netlify from './logos/Netlify.astro'
+import NextJs from './logos/NextJs.astro'
+import NodeJs from '@components/logos/NodeJs.astro'
+import PostgreSQL from './logos/PostgreSQL.astro'
+import React from './logos/React.astro'
+import Tailwind from './logos/Tailwind.astro'
+import Vercel from './logos/Vercel.astro'
+import ViteJs from './logos/ViteJs.astro'
+import VueJs from './logos/VueJs.astro'
+import Wordpress from './logos/Wordpress.astro'
+
+import Lamps from './Lamps.astro'
 import ProjectItem from './ProjectItem.astro'
+
+const TAGS = {
+  AWS: {
+    name: 'AWS',
+    icon: Aws,
+    class: 'bg-[#FF9900] text-white',
+  },
+  DOCKER: {
+    name: 'Docker',
+    icon: Docker,
+    class: 'bg-[#2496ED] text-white',
+  },
+  EXPRESS: {
+    name: 'Express',
+    icon: Express,
+    class: 'bg-[#000000] text-white',
+  },
+  FIREBASE: {
+    name: 'Firebase',
+    icon: Firebase,
+    class: 'bg-[#FFCA28] text-black',
+  },
+  GRAPHQL: {
+    name: 'GraphQL',
+    icon: Graphql,
+    class: 'bg-[#E10098] text-white',
+  },
+  JAVASCRIPT: {
+    name: 'JavaScript',
+    icon: JavaScript,
+    class: 'bg-[#F7DF1E] text-black',
+  },
+  MONGODB: {
+    name: 'MongoDB',
+    icon: MongoDB,
+    class: 'bg-[#47A248] text-white',
+  },
+  MYSQL: {
+    name: 'MySQL',
+    icon: MySQL,
+    class: 'bg-[#4479A1] text-white',
+  },
+  NETLIFY: {
+    name: 'Netlify',
+    icon: Netlify,
+    class: 'bg-[#00C7B7] text-white',
+  },
+  NEXTJS: {
+    name: 'Next.js',
+    icon: NextJs,
+    class: 'bg-[#000000] text-white',
+  },
+  NODEJS: {
+    name: 'Node.js',
+    icon: NodeJs,
+    class: 'bg-[#339933] text-white',
+  },
+  POSTGRESQL: {
+    name: 'PostgreSQL',
+    icon: PostgreSQL,
+    class: 'bg-[#336791] text-white',
+  },
+  REACT: {
+    name: 'React',
+    icon: React,
+    class: 'bg-[#61DAFB] text-black',
+  },
+  TAILWIND: {
+    name: 'Tailwind',
+    icon: Tailwind,
+    class: 'bg-[#38B2AC] text-white',
+  },
+  VERCEL: {
+    name: 'Vercel',
+    icon: Vercel,
+    class: 'bg-[#000000] text-white',
+  },
+  VITEJS: {
+    name: 'Vite.js',
+    icon: ViteJs,
+    class: 'bg-[#646CFF] text-white',
+  },
+  VUEJS: {
+    name: 'Vue.js',
+    icon: VueJs,
+    class: 'bg-[#4FC08D] text-white',
+  },
+  WORDPRESS: {
+    name: 'WordPress',
+    icon: Wordpress,
+    class: 'bg-[#21759B] text-white',
+  },
+}
+
 interface Props {
   class?: string
   componentId?: string
 }
 
 const { class: className, componentId } = Astro.props
+
+const PROJECTS = [
+  {
+    title: 'SVGL - A beautiful library with SVG logos',
+    description:
+      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
+    link: 'https://svgl.vercel.app/',
+    github: 'https://github.com/pheralb/svgl',
+    image: '/projects/project1.png',
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
+]
 ---
 
 <section
   id={componentId}
-  class={`grid auto-rows-fr grid-cols-2 md:grid-cols-3 gap-4 relative px-4 sm:px-8 py-12 h-[100dvh] md:h-screen w-full overflow-hidden [&>div]:bg-gray-200/10 [&>div]:backdrop-blur-sm ${className}`}
+  class={`relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[20rem] gap-2 mx-auto p-6 sm:px-24 ${className}`}
 >
-  <ProjectItem class='col-span-1 md:col-span-1 rounded-lg' />
-  <div class='col-span-1 md:col-span-2 rounded-lg'></div>
-  <header
-    class='relative col-span-2 rounded-xl p-4 select-none [&>h1]:[font-size:_clamp(1rem,10vw,10rem)] [&>h1]:md:[font-size:_clamp(2rem,8vw,10rem)] [&>h1]:font-rubik-mono overflow-hidden flex flex-col justify-center items-center md:items-end'
-  >
-    <h1>
-      <span class='hover:opacity-0'>P</span>
-      <span class='hover:opacity-0'>R</span>
-      <span class='hover:opacity-0'>O</span>
-      <span class='hover:opacity-0'>J</span>
-      <span class='hover:opacity-0'>E</span>
-      <span class='hover:opacity-0'>C</span>
-      <span class='hover:opacity-0'>T</span>
-      <span class='hover:opacity-0'>S</span>
-    </h1>
-    <h1 class='absolute -z-10 translate-y-4' '>
-      <span class='opacity-30'>P</span>
-      <span class='opacity-30'>R</span>
-      <span class='opacity-30'>O</span>
-      <span class='opacity-30'>J</span>
-      <span class='opacity-30'>E</span>
-      <span class='opacity-30'>C</span>
-      <span class='opacity-30'>T</span>
-      <span class='opacity-30'>S</span>
-    </h1>
-    <h1 class='absolute -z-20 translate-y-8'>
-      <span class='opacity-5'>P</span>
-      <span class='opacity-5'>R</span>
-      <span class='opacity-5'>O</span>
-      <span class='opacity-5'>J</span>
-      <span class='opacity-5'>E</span>
-      <span class='opacity-5'>C</span>
-      <span class='opacity-5'>T</span>
-      <span class='opacity-5'>S</span>
-    </h1>
-  </header>
-  <div class='row-span-1 col-span-1 rounded-lg'></div>
-  <div class='col-span-1 row-span-2 md:row-span-1 md:col-span-2 rounded-lg'></div>
-  <div class='row-span-1 col-span-1 rounded-lg'></div>
-  <!-- <ProjectItem class='col-span-4' />
-  <ProjectItem />
-  <ProjectItem />
-  <ProjectItem />
-  <ProjectItem /> -->
-  <!-- <article class='w-full h-full overflow-hidden'>
-    <div
-      class='relative w-full h-full flex gap-6 snap-x snap-mandatory overflow-x-auto [&>div]:snap-center [&>div]:shrink-0'
-    >
-      <div><div class='shrink-0 w-4 sm:w-48'></div></div>
-      <ProjectItem />
-      <ProjectItem />
-      <ProjectItem />
-      <ProjectItem />
-      <ProjectItem />
-      <div><div class='shrink-0 w-4 sm:w-48'></div></div>
-    </div>
-  </article> -->
+  <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
+  <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
+  <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
+  <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
+  <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
+  <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
+</section>

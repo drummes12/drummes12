@@ -1,17 +1,41 @@
 ---
 interface Props {
   class?: string
-  componentId?: string
+  size?: 'sm' | 'lg'
+  title: string
+  tags: {
+    name: string
+    class: string
+    icon: any
+  }[]
+  image: string
 }
 
-const { class: className, componentId } = Astro.props
+const { class: className, size = 'sm', title, tags, image } = Astro.props
 ---
 
-<div id={componentId} class={`${className} h-full snap-center flex flex-col justify-center`}>
+<article
+  class=`${className} col-span-10 md:col-span-${size === 'sm' ? '4' : '6'} relative bg-white/5 backdrop-blur-md rounded-xl overflow-hidden p-8 group`
+>
+  <h2 class='font-bold text-xl'>Project Example</h2>
   <img
-    class='h-4/5 aspect-video object-cover'
+    class=`absolute ${size === 'sm' ? 'md:left-0 md:rounded-e-xl' : 'md:right-0 md:rounded-s-xl'} right-0 max-md:rounded-s-xl bottom-0 h-3/5 w-3/4 group-hover:scale-150 transition object-cover opacity-50 group-hover:opacity-90 group-hover:contrast-125 group-hover:shadow-2xl group-hover:shadow-white/10`
     src='/projects/project1.png'
     alt='Image of example project'
   />
-  <h2>Project Example</h2>
-</div>
+  <div class='absolute left-0 bottom-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent'></div>
+  <ul
+    class=`w-3/4 h-3/5 overflow-hidden absolute ${size === 'sm' ? 'md:left-0' : 'md:right-0'} right-0 bottom-0 p-8 flex flex-wrap-reverse ${size === 'sm' ? 'md:justify-start' : 'md:justify-end'} justify-end gap-1`
+  >
+    {
+      tags.slice(0, 5).map((tag) => (
+        <li>
+          <span class={`flex items-center gap-1 rounded-full text-[0.7rem] ${tag.class} py-1 px-2`}>
+            <tag.icon class='size-3' />
+            {tag.name}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</article>
