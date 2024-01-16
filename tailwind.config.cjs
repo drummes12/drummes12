@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -15,10 +17,10 @@ module.exports = {
       boxShadow: {
         'neon1': '0 0 240px 60px #00ff00',
         'neon1-border': '0 0 20px 10px #00ff00',
-        'neon2': '0 0 240px 60px #ff00FF',
-        'neon2-border': '0 0 20px 10px #ff00FF',
-        'neon3': '0 0 240px 60px #00FFFF',
-        'neon3-border': '0 0 20px 10px #00FFFF'
+        'neon2': '0 0 240px 60px #ff00ff',
+        'neon2-border': '0 0 20px 10px #ff00ff',
+        'neon3': '0 0 240px 60px #00ffff',
+        'neon3-border': '0 0 20px 10px #00ffff'
       },
       backgroundImage: {
         'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
@@ -52,5 +54,19 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animated')],
+  plugins: [
+    require('tailwindcss-animated'),
+    plugin(function({ addUtilities }) {
+      addUtilities({
+        ".horizontal-writing-tb": { "writing-mode": "horizontal-tb" },
+        ".vertical-writing-rl": { "writing-mode": "vertical-rl" },
+        ".vertical-writing-lr": { "writing-mode": "vertical-lr" },
+        ".orientation-mixed": { "text-orientation": "mixed" },
+        ".orientation-upright": { "text-orientation": "upright" },
+        ".orientation-sideways-right": { "text-orientation": "sideways-right" },
+        ".orientation-sideways": { "text-orientation": "sideways" },
+        ".orientation-glyph": { "text-orientation": "use-glyph-orientation" },
+      })
+    })
+  ],
 }

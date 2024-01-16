@@ -18,7 +18,7 @@ import ViteJs from './logos/ViteJs.astro'
 import VueJs from './logos/VueJs.astro'
 import Wordpress from './logos/Wordpress.astro'
 
-import Lamps from './Lamps.astro'
+import BgGradient from '@components/BgGradient.astro'
 import ProjectItem from './ProjectItem.astro'
 
 const TAGS = {
@@ -134,14 +134,17 @@ const PROJECTS = [
 ]
 ---
 
-<section
-  id={componentId}
-  class={`relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[20rem] gap-2 mx-auto p-6 sm:px-24 ${className}`}
->
-  <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
-  <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
-  <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
-  <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
-  <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
-  <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} />
+<section id={componentId} class={`relative w-screen h-min ${className}`}>
+  <BgGradient />
+  <header class='mx-auto w-3/4 max-w-4xl flex justify-center m-4'>
+    <h2 class='text-right font-extrabold text-[4rem] sm:text-8xl text-gray-500/50'>Projects</h2>
+  </header>
+  <div class='relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[30rem] gap-4 mx-auto p-6 sm:px-24'>
+    <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} github={PROJECTS[0].github} />
+    <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} github={PROJECTS[0].github} link={PROJECTS[0].link} />
+    <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} link={PROJECTS[0].link} />
+    <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} link={PROJECTS[0].link} />
+    <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} github={PROJECTS[0].github} />
+    <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} github={PROJECTS[0].github} link={PROJECTS[0].link} />
+  </div>
 </section>
