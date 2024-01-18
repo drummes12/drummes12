@@ -1,0 +1,34 @@
+---
+interface Props {
+  startDate: string
+  endDate: string
+  location: string
+  title: string
+  company: string
+  description: string
+}
+
+const { startDate, endDate, location, title, company, description } = Astro.props
+---
+
+<li
+  class='group text-lg font-light p-6 [&>*]:mr-5 flex flex-col items-end md:hover:bg-white/5 md:hover:rounded-s-xl md:hover:backdrop-blur-sm md:transition md:duration-300'
+>
+  <div
+    class='absolute size-2 rounded-full mt-3 -end-6 border border-white/90 bg-white/90 md:group-hover:animate-ping md:group-hover:animate-infinite'
+  >
+  </div>
+  <time class='text-gray-300 text-xs sm:text-sm font-dm-mono'>
+    {startDate} - {endDate}
+  </time>
+  <h3 class='md:group-hover:-mb-2 -mb-1 md:-mb-2 text-sm sm:text-base'>
+    {location}
+    {title}
+  </h3>
+  <h4 class='md:group-hover:inline md:hidden text-gray-400 text-xs sm:text-sm font-bold md:animate-fade-down md:animate-duration-300'>
+    {company}
+  </h4>
+  <p class='md:group-hover:inline md:hidden text-gray-300 text-base max-w-[50ch] text-pretty md:animate-fade-down md:animate-duration-300'>
+    {description}
+  </p>
+</li>
