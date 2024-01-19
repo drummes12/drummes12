@@ -132,34 +132,61 @@ const PROJECTS = [
     image: '/projects/project1.png',
     tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
   },
+  {
+    title: 'SVGL - A beautiful library with SVG logos',
+    description:
+      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
+    link: 'https://svgl.vercel.app/',
+    github: 'https://github.com/pheralb/svgl',
+    image: '/projects/project1.png',
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
+  {
+    title: 'SVGL - A beautiful library with SVG logos',
+    description:
+      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
+    link: 'https://svgl.vercel.app/',
+    github: 'https://github.com/pheralb/svgl',
+    image: '/projects/project1.png',
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
+  {
+    title: 'SVGL - A beautiful library with SVG logos',
+    description:
+      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
+    link: 'https://svgl.vercel.app/',
+    github: 'https://github.com/pheralb/svgl',
+    image: '/projects/project1.png',
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
+  {
+    title: 'SVGL - A beautiful library with SVG logos',
+    description:
+      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
+    link: 'https://svgl.vercel.app/',
+    github: 'https://github.com/pheralb/svgl',
+    image: '/projects/project1.png',
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+  },
 ]
 ---
 
 <section id={componentId} class={`relative flex flex-col min-h-screen h-min w-screen items-center ${className}`}>
   <Bulb />
   <header class='w-full max-w-[1400px] flex justify-end p-8'>
-    <h2 class='text-right font-extrabold [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] text-gray-500/50'>Proyectos</h2>
+    <h2 class='text-right font-extrabold [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] text-gray-500/50'>
+      Proyectos
+    </h2>
   </header>
-  <div class='relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[30rem] gap-4 mx-auto p-8'>
-    <ProjectItem
-      size='lg'
-      title={PROJECTS[0].title}
-      tags={PROJECTS[0].tags}
-      image={PROJECTS[0].image}
-      github={PROJECTS[0].github}
-    />
-    <ProjectItem
-      size='sm'
-      title={PROJECTS[0].title}
-      tags={PROJECTS[0].tags}
-      image={PROJECTS[0].image}
-      github={PROJECTS[0].github}
-      link={PROJECTS[0].link}
-    />
-    <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} link={PROJECTS[0].link} />
-    <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} link={PROJECTS[0].link} />
-    <ProjectItem size='lg' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} github={PROJECTS[0].github} />
-    <ProjectItem size='sm' title={PROJECTS[0].title} tags={PROJECTS[0].tags} image={PROJECTS[0].image} github={PROJECTS[0].github} link={PROJECTS[0].link} />
+  <div
+    class='relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[35rem] sm:auto-rows-[30rem] gap-4 mx-auto p-8'
+  >
+    {
+      PROJECTS.map((project, idx) => {
+        const size = idx % 4 === 0 || idx % 4 === 3 ? 'lg' : 'sm'
+        return <ProjectItem size={size} {...project} />
+      })
+    }
   </div>
   <div class='flex-1 flex items-end w-full'>
     <Languages />
