@@ -1,58 +1,61 @@
+---
+const SECTIONS = [
+  {
+    id: 'experience',
+    name: 'Experiencia',
+  },
+  {
+    id: 'projects',
+    name: 'Proyectos',
+  },
+  {
+    id: 'about',
+    name: 'Sobre mí',
+  },
+]
+---
+
 <ul class='max-sm:hidden text-2xl text-white/70 flex flex-col font-medium pt-8 rounded-lg'>
-  <li>
-    <a href='#about' class='nav-list relative block py-4 pl-8 hover:text-white/90'>About</a>
-  </li>
-  <li>
-    <a href='#experience' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Experience</a>
-  </li>
-  <li>
-    <a href='#projects' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Projects</a>
-  </li>
-  <li>
-    <a href='#contact-me' class='nav-list relative block py-4 pl-8 hover:text-white/90'>Contact me</a>
-  </li>
+  {
+    SECTIONS.map(({ id, name }) => (
+      <li>
+        <a
+          href={`/#${id}`}
+          class='nav-list relative block py-4 pl-8 hover:text-white/90 hover:bg-black/20'
+        >
+          {name}
+        </a>
+      </li>
+    ))
+  }
 </ul>
 
 <ul class='sm:hidden text-2xl text-white/70 flex flex-col font-medium pt-8 rounded-lg'>
-  <li>
-    <a
-      href='#about'
-      class='nav-list relative block py-4 pl-8 hover:text-white/90' data-collapse-close='navbar-location'>About</a
-    >
-  </li>
-  <li>
-    <a
-      href='#experience'
-      class='nav-list relative block py-4 pl-8 hover:text-white/90'
-      data-collapse-close='navbar-location'>Experience</a
-    >
-  </li>
-  <li>
-    <a
-      href='#projects'
-      class='nav-list relative block py-4 pl-8 hover:text-white/90'
-      data-collapse-close='navbar-location'>Projects</a
-    >
-  </li>
-  <li>
-    <a
-      href='#contact-me'
-      class='nav-list relative block py-4 pl-8 hover:text-white/90'
-      data-collapse-close='navbar-location'>Contact me</a
-    >
-  </li>
+  {
+    SECTIONS.map(({ id, name }) => (
+      <li>
+        <a
+          href={`/#${id}`}
+          class='nav-list relative block py-4 pl-8 hover:text-white/90'
+          data-collapse-close='navbar-location'
+        >
+          {name}
+        </a>
+      </li>
+    ))
+  }
 </ul>
 
 <script>
   window.addEventListener('scroll', () => {
-    const sections = ['about', 'experience', 'projects', 'contact-me']
+    const sections = ['experience', 'projects', 'about']
 
     sections.forEach((sectionId) => {
-      const optionMenu = document.querySelector(`[href="#${sectionId}"]`)
+      const optionMenu = document.querySelector(`[href="/#${sectionId}"]`)
 
       if (isSectionVisible(sectionId)) {
         sections.forEach((otherSectionId) => {
-          const otherOptionMenu = document.querySelector(`[href="#${otherSectionId}"]`)
+          const otherOptionMenu = document.querySelector(`[href="/#${otherSectionId}"]`)
           otherOptionMenu?.removeAttribute('aria-current')
         })
 

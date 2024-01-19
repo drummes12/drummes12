@@ -5,13 +5,14 @@ import Mail from '@icons/Mail.astro'
 import WhatsApp from '@icons/WhatsApp.astro'
 
 import Menu from '@components/Menu.astro'
+import Drummes12 from './logos/Drummes12.astro'
 ---
 
 <nav
   class='fixed z-50 h-full flex sm:items-center -translate-x-full sm:hover:translate-x-0 sm:hover:shadow-black sm:hover:shadow-xl transition duration-300 ease-in-out group'
   id='navbar-location'
 >
-  <div class='flex flex-col h-full w-screen sm:max-w-[20rem] bg-gray-200/10 backdrop-blur-md sm:rounded-r-xl'>
+  <div class='flex flex-col h-full w-screen sm:max-w-[25rem] bg-gray-200/10 backdrop-blur-md sm:rounded-r-xl'>
     <header class='p-8 w-full flex justify-between'>
       <a href='#greating' class='text-4xl font-bold select-none max-sm:hidden'>Drummes12</a>
       <a href='#greating' class='text-4xl font-bold select-none sm:hidden' data-collapse-close='navbar-location'
@@ -28,35 +29,28 @@ import Menu from '@components/Menu.astro'
       <Menu />
     </main>
     <footer>
-      <ul class='flex justify-around m-8 p-4 text-2xl text-white/70'>
-        <li>
-          <a href='#' class='hover:text-white/90'><LinkedIn class='h-8 aspect-square' /></a>
-        </li>
-        <li>
-          <a href='#' class='hover:text-white/90'><WhatsApp class='h-8 aspect-square' /></a>
-        </li>
-        <li>
-          <a
-            href='mailto:drummes.12@gmail.com?subject=%C2%A1Dise%C3%B1emos%20y%20creamos%20juntos%20una%20buena%20idea!&body=%C2%A1Hola%20Drummes12!%0D%0A%0D%0AQuisiera%20saber%20si%20podemos%20trabajar%20juntos%20en%20un%20proyecto.%0D%0A%0D%0ASaludos%2C'
-            class='hover:text-white/90'><Mail class='h-8 aspect-square' /></a
-          >
-        </li>
-      </ul>
+      <nav class='flex justify-around p-8 text-2xl text-white/70'>
+        <a href='#' class='hover:text-white/90'><LinkedIn class='size-10' /></a>
+
+        <a href='#' class='hover:text-white/90'><WhatsApp class='size-10' /></a>
+
+        <a href='mailto:drummes.12@gmail.com' class='hover:text-white/90'><Mail class='size-10' /></a>
+      </nav>
     </footer>
   </div>
   <div
-    class='hidden sm:block absolute -right-20 p-4 group-hover:-translate-x-full group-hover:bg-transparent group-hover:backdrop-blur-0 bg-gray-200/5 backdrop-blur-md rounded-r-xl transition-all duration-300'
+    class='hidden sm:block absolute -right-[4.5rem] p-4 group-hover:-translate-x-full group-hover:bg-transparent group-hover:backdrop-blur-0 bg-gray-200/5 backdrop-blur-md rounded-r-xl transition-all duration-300'
   >
     <span class='sr-only'>Open main menu</span>
-    <img src='/logo.png' alt='Logo de Drummes12' class='h-12 aspect-square' />
+    <Drummes12 class='size-10' />
   </div>
   <button
     data-collapse-open='navbar-location'
     type='button'
-    class='absolute sm:hidden -right-20 p-4 bg-gray-200/5 backdrop-blur-md rounded-ee-xl'
+    class='absolute sm:hidden -right-[4.5rem] p-4 bg-gray-200/5 backdrop-blur-md rounded-ee-xl'
   >
     <span class='sr-only'>Open main menu</span>
-    <img src='/logo.png' alt='Logo de Drummes12' class='h-12 aspect-square' />
+    <Drummes12 class='size-10' />
   </button>
 </nav>
 

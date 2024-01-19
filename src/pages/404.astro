@@ -1,12 +1,12 @@
 ---
-import Lamps from '@components/Lamps.astro';
+import Flicker from '@components/lights/Flicker.astro';
 import Layout from '@layouts/Layout.astro'
 ---
 
 <Layout title='Drummes12'>
   <section class='h-[100dvh] md:h-screen w-screen'>
     <div id='wall' class='absolute top-0 left-0 h-full w-full -z-20'></div>
-    <Lamps />
+    <Flicker />
     <div class='flex flex-col justify-center items-center h-full'>
       <h1 class='text-6xl font-bold'>Ups!</h1>
       <h2 class='text-2xl font-bold'>Page not found</h2>
