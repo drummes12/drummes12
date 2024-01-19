@@ -21,6 +21,7 @@ import Vercel from './logos/Vercel.astro'
 import ViteJs from './logos/ViteJs.astro'
 import VueJs from './logos/VueJs.astro'
 import Wordpress from './logos/Wordpress.astro'
+import SectionComponent from './SectionComponent.astro'
 
 const TAGS = {
   REACT: {
@@ -116,11 +117,10 @@ const TAGS = {
 }
 
 interface Props {
-  class?: string
-  componentId?: string
+  id?: string
 }
 
-const { class: className, componentId } = Astro.props
+const { id } = Astro.props
 
 const PROJECTS = [
   {
@@ -171,15 +171,15 @@ const PROJECTS = [
 ]
 ---
 
-<section id={componentId} class={`relative flex flex-col min-h-screen h-min w-screen items-center ${className}`}>
+<SectionComponent id={id}>
   <Bulb />
-  <header class='w-full max-w-[1400px] flex justify-end p-8'>
+  <header class='w-full max-w-[1400px] flex justify-end'>
     <h2 class='text-right font-extrabold [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] text-gray-500/50'>
       Proyectos
     </h2>
   </header>
   <div
-    class='relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[35rem] sm:auto-rows-[30rem] gap-4 mx-auto p-8'
+    class='relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[35rem] sm:auto-rows-[30rem] gap-4 mx-auto p-4'
   >
     {
       PROJECTS.map((project, idx) => {
@@ -191,4 +191,4 @@ const PROJECTS = [
   <div class='flex-1 flex items-end w-full'>
     <Languages />
   </div>
-</section>
+</SectionComponent>

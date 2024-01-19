@@ -1,25 +1,35 @@
 ---
+import SectionComponent from './SectionComponent.astro'
 import Shutter from './lights/Shutter.astro'
 interface Props {
-  class?: string
-  componentId?: string
+  id?: string
 }
 
-const { class: className, componentId } = Astro.props
+const { id } = Astro.props
 ---
 
-<section
-  id={componentId}
-  class={`relative h-[100svh] md:h-screen w-full flex flex-col justify-center items-center ${className}`}
->
+<SectionComponent id={id} class='flex flex-col md:flex-row gap-8 items-center justify-center '>
   <Shutter />
-  <article class='w-3/4 max-w-4xl bg-black/10 shadow-md shadow-black/80 backdrop-blur-md p-4 rounded-xl'>
-    <h3 class='text-md text-gray-400/80 font-bold'>Sobre mi</h3>
-    <p class='text-xl md:text-3xl text-white/90 [text-wrap:balance]'>
+
+  <img
+    class='aspect-square object-cover object-top rounded-full size-64'
+    src='/me.webp'
+    alt='Foto de Esteban'
+  />
+  <article
+    class='sm:w-3/4 max-w-4xl bg-black/10 shadow-md shadow-black/80 backdrop-blur-md p-4 rounded-xl [&>p]:text-lg [&>p]:md:text-xl [&>p]: text-white/90 [&>p]:mb-8'
+  >
+    <h2 class='text-md text-gray-400/80 font-bold'>Sobre mi</h2>
+    <p>
       A little bit about me, let's see... I'm Esteban a mechatronics engineer, with a passion for creativity and
-      technology. I've worked for the past 5 years in the automotive industry, and I'm currently working as a software
-      developer for a startup in the same industry. I'm a self-taught developer, and I'm always looking for new
-      challenges and opportunities to learn and grow. 👋🏻
+      technology.
+    </p>
+    <p>
+      I've worked for the past 5 years in the automotive industry, and I'm currently working as a software developer for
+      a startup in the same industry.
+    </p>
+    <p>
+      I'm a self-taught developer, and I'm always looking for new challenges and opportunities to learn and grow. 👋🏻
     </p>
   </article>
-</section>
+</SectionComponent>

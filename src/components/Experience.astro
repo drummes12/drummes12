@@ -1,12 +1,13 @@
 ---
 import ExperienceItem from './ExperienceItem.astro'
+import SectionComponent from './SectionComponent.astro'
 import Rotate from './lights/Rotate.astro'
 
 interface Props {
-  componentId?: string
+  id?: string
 }
 
-const { componentId } = Astro.props
+const { id } = Astro.props
 
 const EXPERIENCES = [
   {
@@ -39,9 +40,9 @@ const EXPERIENCES = [
 ]
 ---
 
-<section id={componentId} class='min-h-screen h-max w-full relative flex flex-col items-center'>
+<SectionComponent id={id}>
   <Rotate />
-  <div class='h-full w-full p-8 max-w-[1400px] flex flex-col mb-16'>
+  <div class='sm:pl-20 h-full w-full max-w-[1400px] flex flex-col mb-16'>
     <header class='flex w-full justify-end mt-16'>
       <h2 class='text-right font-extrabold [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] text-gray-500/50'>Experiencia</h2>
     </header>
@@ -49,4 +50,4 @@ const EXPERIENCES = [
       {EXPERIENCES.map((experience) => <ExperienceItem {...experience} />)}
     </ol>
   </div>
-</section>
+</SectionComponent>

@@ -1,0 +1,8 @@
+<section
+  id={Astro.props.id}
+  class={`relative overflow-x-clip h-max min-h-[100svh] md:min-h-screen w-full mx-auto px-4 md:px-8 ${
+    Astro.props.class ?? ''
+  }`}
+>
+  <slot />
+</section>
