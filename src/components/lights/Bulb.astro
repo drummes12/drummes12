@@ -1,0 +1,33 @@
+<div
+  class='absolute w-full h-full blur-2xl -z-50 [&>div]:aspect-square [&>div]:bg-radial-gradient [&>div]:to-90% [&>div]:to-transparent'
+>
+  <div class='bulb absolute top-0 left-0 w-[16rem] from-c-neon1/70'></div>
+  <div class='bulb absolute bottom-3/4 right-0 w-[20rem] from-c-neon2/70'></div>
+  <div class='bulb absolute top-1/3 left-1/3 w-[18rem] from-c-neon3/70'></div>
+  <div class='bulb absolute bottom-0 right-1/2 w-[20rem] from-c-neon4/70'></div>
+  <div class='bulb absolute top-1/2 left-2/3 w-[16rem] from-c-neon5/70'></div>
+</div>
+
+
+<style>
+  .bulb {
+    view-timeline-axis: block;
+    animation-fill-mode: both;
+    animation-range: entry 25% cover 70%;
+    view-timeline-name: --revealing-bulb;
+    animation-timeline: --revealing-bulb;
+    animation-name: reveal-bumb;
+  }
+
+  @keyframes reveal-bumb {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+</style>

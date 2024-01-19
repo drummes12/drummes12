@@ -1,5 +1,5 @@
 ---
-import BgGradient from '@components/BgGradient.astro'
+import Bulb from '@components/lights/Bulb.astro'
 import ProjectItem from './ProjectItem.astro'
 import Languages from '@components/Languages.astro'
 
@@ -135,12 +135,12 @@ const PROJECTS = [
 ]
 ---
 
-<section id={componentId} class={`relative w-screen flex flex-col min-h-screen h-min items-center ${className}`}>
-  <BgGradient />
-  <header class='w-full max-w-[1400px] flex justify-end p-4 sm:p-8'>
+<section id={componentId} class={`relative flex flex-col min-h-screen h-min w-screen items-center ${className}`}>
+  <Bulb />
+  <header class='w-full max-w-[1400px] flex justify-end p-8'>
     <h2 class='text-right font-extrabold [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] text-gray-500/50'>Proyectos</h2>
   </header>
-  <div class='relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[30rem] gap-4 mx-auto p-4 sm:p-8'>
+  <div class='relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[30rem] gap-4 mx-auto p-8'>
     <ProjectItem
       size='lg'
       title={PROJECTS[0].title}
