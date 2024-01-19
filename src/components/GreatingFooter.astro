@@ -1,51 +1,11 @@
-<footer class='absolute bottom-4 sm:bottom-8 w-full flex items-end justify-between px-4 md:px-8'>
-  <div class='grow left-0 font-bold text-3xl md:text-5xl leading-6 md:leading-10 [text-wrap:balance]'>
-    <p class='animate-flip-up animate-once animate-delay-[600ms] flex items-end gap-4'>
-      Tu
-      <span
-        id='word-client'
-        class='text-red-200 font-dm-mono block whitespace-nowrap animate-typing overflow-x-clip w-[12.1ch]'
-        >VISION</span
-      >
-    </p>
-    <p class='animate-flip-up animate-once animate-delay-[600ms] flex items-center gap-4'>
-      Mi
-      <span
-        id='word-own'
-        class='text-green-200 font-dm-mono block whitespace-nowrap animate-typing overflow-x-clip w-[12ch]'
-        >CREATIVIDAD</span
-      >
-    </p>
-  </div>
-
-  <button
-    class='hidden sm:inline right-0 opacity-50 text-xl md:text-3xl bottom-4 sm:bottom-8 animate-flip-up animate-once animate-delay-[900ms]'
-  >
-    drummes.12@gmail.com
-  </button>
+<footer
+  class='absolute bottom-0 max-w-[40ch] m-4 md:m-8 p-4 md:p-8 [font-size:_clamp(1rem,_0.737rem_+_1.404vw,_2rem)] rounded-xl bg-black/10 shadow-md shadow-black/80'
+>
+  <p class='animate-flip-up animate-once text-white/90'>
+    +2 años de experiencia.
+    <span id='word-client' class='text-red-200'>Ingeniero Mecatrónico y Desarrollador Web</span>
+    . De
+    <span id='word-own' class='text-green-200'>Bogotá, Colombia</span>
+    . Creemos juntos algo increíble.
+  </p>
 </footer>
-
-<script>
-  export const WORDS_CLIENT = ['VISION', 'OBJETIVO', 'META', 'PROPOSITO']
-  export const WORDS_OWN = ['CREATIVIDAD', 'PASION', 'HABILIDAD', 'TALENTO']
-
-  const wordClient = document.getElementById('word-client')
-  const wordOwn = document.getElementById('word-own')
-
-  wordClient.addEventListener('animationiteration', () => {
-    animateWord(wordClient, WORDS_CLIENT)
-  })
-
-  wordOwn.addEventListener('animationiteration', () => {
-    animateWord(wordOwn, WORDS_OWN)
-  })
-
-  export function animateWord(wordElement: HTMLElement, wordList: string[]) {
-    const randomWord = getRandomWord(wordList)
-    wordElement.innerText = randomWord
-  }
-
-  function getRandomWord(arr: string[]) {
-    return arr[Math.floor(Math.random() * arr.length)]
-  }
-</script>

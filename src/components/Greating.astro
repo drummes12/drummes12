@@ -1,6 +1,10 @@
 ---
 import GreatingFooter from '@components/GreatingFooter.astro'
-import Lamps from './Lamps.astro';
+import Lamps from './Lamps.astro'
+import Button from './Button.astro'
+import LinkedIn from './icons/LinkedIn.astro'
+import GitHub from './icons/GitHub.astro'
+import Mail from './icons/Mail.astro'
 interface Props {
   class?: string
   componentId?: string
@@ -11,76 +15,28 @@ const { class: className, componentId } = Astro.props
 
 <section id={componentId} class={`relative h-[100svh] md:h-screen w-full justify-center ${className}`}>
   <Lamps />
-  <header class='w-full h-full flex flex-col justify-center md:justify-start md:pt-28 px-4 md:px-8'>
+  <main class='w-full h-full flex flex-col md:justify-start pt-28 px-4 md:px-8'>
     <h1
-      class='text-[8rem] sm:text-[10rem] md:text-[12rem] lg:text-[14rem] 2xl:text-[18rem] text-right font-semibold leading-none animate-flip-up animate-once'
+      class='[font-size:_clamp(5rem,_3.158rem_+_9.825vw,_12rem)] text-right font-semibold leading-none animate-flip-up animate-once'
     >
-      hola
+      hey,
     </h1>
     <p
-      class='max-sm:hidden text-right whitespace-nowrap text-[6rem] md:text-[8rem] lg:text-[10rem] 2xl:text-[14rem] opacity-70 animate-flip-up animate-once animate-delay-300'
+      class='text-right whitespace-nowrap [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] opacity-70 animate-flip-up animate-once animate-delay-300 overflow-hidden'
     >
       Soy Esteban
     </p>
-    <div
-      class='marquee rotate-3 text-[6rem] sm:text-[6rem] [--duration:10s] md:[--duration:20s] [--gap:1rem] md:[--gap:4rem]'
-    >
-      <div class='marquee__group'>
-        <p>Soy Esteban</p>
-        <span>|</span>
-        <p>Soy Esteban</p>
-        <span>|</span>
-      </div>
-      <div class='marquee__group'>
-        <p>Soy Esteban</p>
-        <span>|</span>
-        <p>Soy Esteban</p>
-        <span>|</span>
-      </div>
-    </div>
-  </header>
+    <nav class='w-full flex gap-4 flex-wrap justify-end animate-fade-up'>
+      <Button href='https://www.linkedin.com/in/drummes12/' title='LinkedIn' color='from-linkedin'>
+        <LinkedIn class='size-6 sm:size-8 text-white/50 group-hover:text-white/90 group-hover:scale-105 transition' />
+      </Button>
+      <Button href='https://github.com/drummes12' title='GitHub' color='from-github'>
+        <GitHub class='size-6 sm:size-8 text-white/50 group-hover:text-white/90 group-hover:scale-105 transition' />
+      </Button>
+      <Button href='mailto:drummes.12@gmail.com' title='drummes.12@gmail.com' color='from-mail'>
+        <Mail class='size-6 sm:size-8 text-white/50 group-hover:text-white/90 group-hover:scale-105 transition' />
+      </Button>
+    </nav>
+  </main>
   <GreatingFooter />
 </section>
-
-<style>
-  .marquee {
-    display: flex;
-    overflow: hidden;
-    user-select: none;
-    gap: var(--gap);
-    opacity: 0.7;
-    white-space: nowrap;
-  }
-
-  .marquee__group {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: var(--gap);
-    min-width: 100%;
-    animation: scroll var(--duration) linear infinite;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .marquee__group {
-      animation-play-state: paused;
-    }
-  }
-
-  @media not all and (max-width: 640px) {
-    .marquee__group {
-      display: none;
-      animation: none;
-    }
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-100% - var(--gap)));
-    }
-  }
-</style>

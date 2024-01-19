@@ -5,6 +5,25 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      colors: {
+        'c-neon1': '#ffff00',
+        'c-neon2': '#00ffff',
+        'c-neon3': '#00ff00',
+        'c-neon4': '#ff00ff',
+        'c-neon5': '#ff0000',
+        'linkedin': '#0077b5',
+        'github': '#333333',
+        'twitter': '#1da1f2',
+        'facebook': '#1877f2',
+        'instagram': '#c13584',
+        'youtube': '#ff0000',
+        'twitch': '#9146ff',
+        'discord': '#7289da',
+        'whatsapp': '#25d366',
+        'telegram': '#0088cc',
+        'mail': '#d44638',
+        'link': '#00b0ff',
+      },
       fontFamily: {
         'dm-mono': ['DM Mono', 'monospace'],
         'rubik-mono': ['Rubik Mono One', 'monospace'],
@@ -15,12 +34,16 @@ module.exports = {
         'neon3': '#00FFff'
       },
       boxShadow: {
-        'neon1': '0 0 240px 60px #00ff00',
-        'neon1-border': '0 0 20px 10px #00ff00',
-        'neon2': '0 0 240px 60px #ff00ff',
-        'neon2-border': '0 0 20px 10px #ff00ff',
-        'neon3': '0 0 240px 60px #00ffff',
-        'neon3-border': '0 0 20px 10px #00ffff'
+        'neon1': '0 0 240px 60px #ffff00',
+        'neon1-border': '0 0 20px 10px #ffff00',
+        'neon2': '0 0 240px 60px #00ffff',
+        'neon2-border': '0 0 20px 10px #00ffff',
+        'neon3': '0 0 240px 60px #00ff00',
+        'neon3-border': '0 0 20px 10px #00ff00',
+        'neon4': '0 0 240px 60px #ff00ff',
+        'neon4-border': '0 0 20px 10px #ff00ff',
+        'neon5': '0 0 240px 60px #ff0000',
+        'neon5-border': '0 0 20px 10px #ff0000',
       },
       backgroundImage: {
         'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',

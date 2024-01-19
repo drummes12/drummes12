@@ -12,7 +12,7 @@ const { startDate, endDate, location, title, company, description } = Astro.prop
 ---
 
 <li
-  class='group text-lg font-light p-6 [&>*]:mr-5 flex flex-col items-end md:hover:bg-white/5 md:hover:rounded-s-xl md:hover:backdrop-blur-sm md:transition md:duration-300'
+  class='group text-lg font-light p-6 [&>*]:mr-5 flex flex-col items-end md:hover:bg-black/10 md:hover:rounded-s-xl md:hover:backdrop-blur-sm md:transition md:duration-300 md:hover:shadow-md md:hover:shadow-black/80'
 >
   <div
     class='absolute size-2 rounded-full mt-3 -end-6 border border-white/90 bg-white/90 md:group-hover:animate-ping md:group-hover:animate-infinite'
@@ -28,7 +28,7 @@ const { startDate, endDate, location, title, company, description } = Astro.prop
   <h4 class='md:group-hover:inline md:hidden text-gray-400 text-xs sm:text-sm font-bold md:animate-fade-down md:animate-duration-300'>
     {company}
   </h4>
-  <p class='md:group-hover:inline md:hidden text-gray-300 text-base max-w-[50ch] text-pretty md:animate-fade-down md:animate-duration-300'>
+  <p class='md:group-hover:inline md:hidden text-gray-300 text-sm sm:text-base max-w-[50ch] text-pretty md:animate-fade-down md:animate-duration-300'>
     {description}
   </p>
 </li>

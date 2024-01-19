@@ -4,14 +4,12 @@ import Greating from '@components/Greating.astro'
 import About from '@components/About.astro'
 import Projects from '@components/Projects.astro'
 import Experience from '@components/Experience.astro'
-import Languages from '@components/Languages.astro'
 ---
 
 <Layout title='Drummes12' navBar>
   <div id='wall' class='absolute top-0 left-0 h-full w-screen -z-20'></div>
   <Greating componentId='greating' />
-  <About componentId='about' />
   <Experience componentId='experience' />
   <Projects componentId='projects' />
-  <Languages />
+  <About componentId='about' />
 </Layout>

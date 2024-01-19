@@ -1,0 +1,42 @@
+---
+interface Props {
+  class?: string
+  href: string
+  title?: string
+  color: string
+}
+
+const { class: className, href, title, color } = Astro.props
+---
+
+<a
+  href={href}
+  target='_blank'
+  rel='noopener noreferrer'
+  class={`${className} relative h-min w-min px-4 py-3 rounded-xl group hover:bg-white/5 backdrop-blur-sm overflow-hidden border-2 border-white/5 hover:border-white/10 flex items-center justify-center gap-2 transition-all hover:shadow-md hover:shadow-black/80`}
+>
+  <div
+    class={`absolute left-0 top-0 w-full h-1/4 bg-gradient-to-b to-transparent ${color} opacity-40 group-hover:opacity-80`}
+  >
+  </div>
+  <div
+    class={`absolute left-0 top-0 w-1/12 h-full bg-gradient-to-r to-transparent ${color} opacity-40 group-hover:opacity-80`}
+  >
+  </div>
+  <div
+    class={`absolute left-0 bottom-0 w-full h-1/4 bg-gradient-to-t to-transparent ${color} opacity-40 group-hover:opacity-80`}
+  >
+  </div>
+  <div
+    class={`absolute right-0 bottom-0 w-1/12 h-full bg-gradient-to-l to-transparent ${color} opacity-40 group-hover:opacity-80`}
+  >
+  </div>
+  <slot />
+  {
+    title && (
+      <span class='truncate text-sm sm:text-base text-white/50 group-hover:text-white/90 group-hover:font-bold'>
+        {title}
+      </span>
+    )
+  }
+</a>
