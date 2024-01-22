@@ -1,6 +1,8 @@
 ---
-import Flicker from '@components/lights/Flicker.astro';
-import Layout from '@layouts/Layout.astro'
+import Layout from '@/layouts/Layout.astro'
+import Flicker from '@/components/lights/Flicker.astro'
+import Languages from '@/components/Languages.astro'
+import Drummes12 from '@/components/logos/Drummes12.astro'
 ---
 
 <Layout title='Drummes12'>
@@ -10,7 +12,10 @@ import Layout from '@layouts/Layout.astro'
     <div class='flex flex-col justify-center items-center h-full'>
       <h1 class='text-6xl font-bold'>Ups!</h1>
       <h2 class='text-2xl font-bold'>Page not found</h2>
-      <a href='/' class='text-blue-500 hover:text-blue-700'>Go back <span class='font-bold'>Drummes12</span></a>
+      <a href='/' class='text-blue-500 hover:text-blue-700'
+        >Go back <span class='font-bold'>Drummes12</span>
+        <Drummes12 class='size-8 mt-4 mx-auto' />
+      </a>
     </div>
   </section>
 </Layout>

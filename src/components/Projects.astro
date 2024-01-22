@@ -1,31 +1,31 @@
 ---
-import Bulb from '@components/lights/Bulb.astro'
-import ProjectItem from './ProjectItem.astro'
-import Languages from '@components/Languages.astro'
+import Languages from '@/components/Languages.astro'
+import ProjectItem from '@/components/ProjectItem.astro'
+import SectionComponent from '@/components/SectionComponent.astro'
 
-import Aws from '@components/logos/Aws.astro'
-import Docker from '@components/logos/Docker.astro'
-import Express from '@components/logos/Express.astro'
-import Firebase from '@components/logos/Firebase.astro'
-import Graphql from '@components/logos/Graphql.astro'
-import JavaScript from '@components/logos/JavaScript.astro'
-import MongoDB from '@components/logos/MongoDB.astro'
-import MySQL from '@components/logos/MySQL.astro'
-import Netlify from './logos/Netlify.astro'
-import NextJs from './logos/NextJs.astro'
-import NodeJs from '@components/logos/NodeJs.astro'
-import PostgreSQL from './logos/PostgreSQL.astro'
-import React from './logos/React.astro'
-import Tailwind from './logos/Tailwind.astro'
-import Vercel from './logos/Vercel.astro'
-import ViteJs from './logos/ViteJs.astro'
-import VueJs from './logos/VueJs.astro'
-import Html from './logos/Html.astro'
-import Css from './logos/Css.astro'
-import Sass from './logos/Sass.astro'
+import Bulb from '@/lights/Bulb.astro'
 
-import Wordpress from './logos/Wordpress.astro'
-import SectionComponent from './SectionComponent.astro'
+import Aws from '@/logos/Aws.astro'
+import Css from '@/logos/Css.astro'
+import Docker from '@/logos/Docker.astro'
+import Express from '@/logos/Express.astro'
+import Firebase from '@/logos/Firebase.astro'
+import Graphql from '@/logos/Graphql.astro'
+import Html from '@/logos/Html.astro'
+import JavaScript from '@/logos/JavaScript.astro'
+import MongoDB from '@/logos/MongoDB.astro'
+import MySQL from '@/logos/MySQL.astro'
+import Netlify from '@/logos/Netlify.astro'
+import NextJs from '@/logos/NextJs.astro'
+import NodeJs from '@/logos/NodeJs.astro'
+import PostgreSQL from '@/logos/PostgreSQL.astro'
+import React from '@/logos/React.astro'
+import Sass from '@/logos/Sass.astro'
+import Tailwind from '@/logos/Tailwind.astro'
+import Vercel from '@/logos/Vercel.astro'
+import ViteJs from '@/logos/ViteJs.astro'
+import VueJs from '@/logos/VueJs.astro'
+import Wordpress from '@/logos/Wordpress.astro'
 
 const TAGS = {
   REACT: {
@@ -181,7 +181,7 @@ const PROJECTS = [
 ]
 ---
 
-<SectionComponent id={id} class='px-0'>
+<SectionComponent id={id} class='!px-0'>
   <Bulb />
   <header class='w-full max-w-[1400px] py-4 flex justify-end'>
     <h2 class='text-right font-extrabold [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] text-gray-500/90'>
