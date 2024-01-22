@@ -22,6 +22,7 @@ const SECTIONS = [
         <a
           href={`/#${id}`}
           class='nav-list relative block py-4 pl-8 hover:text-white/90 hover:bg-black/30 transition-colors'
+          aria-label={`Ir a ${name}`}
         >
           {name}
         </a>
@@ -38,6 +39,7 @@ const SECTIONS = [
           href={`/#${id}`}
           class='nav-list relative block py-4 pl-8 hover:text-white/90'
           data-collapse-close='navbar-location'
+          aria-label={`Ir a ${name}`}
         >
           {name}
         </a>

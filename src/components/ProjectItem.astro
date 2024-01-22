@@ -44,7 +44,7 @@ const { class: className, size = 'sm', title, description, tags, image, github, 
       {
         tags.slice(0, 5).map((tag) => (
           <li>
-            <span class={`${tag.class} flex items-center gap-1 rounded-full text-[0.7rem] py-1 px-2`}>
+            <span class={`${tag.class} flex items-center gap-1 rounded-full text-xs sm:text-sm py-1 px-2`}>
               <tag.icon class='size-3' />
               {tag.name}
             </span>

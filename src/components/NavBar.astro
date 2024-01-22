@@ -15,13 +15,19 @@ import Drummes12 from '@/logos/Drummes12.astro'
 >
   <div class='flex flex-col h-full w-screen sm:max-w-[25rem] bg-black/20 backdrop-blur-md sm:rounded-r-xl'>
     <header class='p-8 w-full flex justify-between'>
-      <a href='#greating' class='text-4xl font-bold select-none max-sm:hidden'>Drummes12</a>
-      <a href='#greating' class='text-4xl font-bold select-none sm:hidden' data-collapse-close='navbar-location'
+      <a href='#greating' class='text-4xl font-bold select-none max-sm:hidden' aria-label='Ir al inicio de la pagina'
         >Drummes12</a
+      >
+      <a
+        href='#greating'
+        class='text-4xl font-bold select-none sm:hidden'
+        data-collapse-close='navbar-location'
+        aria-label='Ir al inicio de la pagina'>Drummes12</a
       >
       <button
         class='sm:hidden text-white/70 hover:text-white/90 transition duration-300 ease-in-out'
         data-collapse-close='navbar-location'
+        aria-label='Close main menu'
       >
         <CloseIcon />
       </button>
@@ -35,17 +41,23 @@ import Drummes12 from '@/logos/Drummes12.astro'
           href='https://www.linkedin.com/in/drummes12/'
           target='_blank'
           rel='noopener noreferrer'
-          class='hover:text-white/90 hover:scale-105'><LinkedIn class='size-10' /></a
+          class='hover:text-white/90 hover:scale-105'
+          aria-label='LinkedIn de Drummes12'><LinkedIn class='size-10' /></a
         >
 
         <a
           href='https://github.com/drummes12'
           target='_blank'
           rel='noopener noreferrer'
-          class='hover:text-white/90 hover:scale-105'><GitHub class='size-10' /></a
+          class='hover:text-white/90 hover:scale-105'
+          aria-label='GitHub de Drummes12'><GitHub class='size-10' /></a
         >
 
-        <a href='mailto:drummes.12@gmail.com' class='hover:text-white/90 hover:scale-105'><Mail class='size-10' /></a>
+        <a
+          href='mailto:drummes.12@gmail.com'
+          class='hover:text-white/90 hover:scale-105'
+          aria-label='Enviar correo a drummes.12@gmail.com'><Mail class='size-10' /></a
+        >
       </nav>
     </footer>
   </div>
@@ -59,6 +71,7 @@ import Drummes12 from '@/logos/Drummes12.astro'
     data-collapse-open='navbar-location'
     type='button'
     class='absolute sm:hidden -right-16 p-4 bg-black/20 backdrop-blur-md rounded-ee-xl'
+    aria-label='Open main menu'
   >
     <span class='sr-only'>Open main menu</span>
     <Drummes12 class='size-8' />
