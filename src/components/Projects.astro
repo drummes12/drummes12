@@ -20,6 +20,10 @@ import Tailwind from './logos/Tailwind.astro'
 import Vercel from './logos/Vercel.astro'
 import ViteJs from './logos/ViteJs.astro'
 import VueJs from './logos/VueJs.astro'
+import Html from './logos/Html.astro'
+import Css from './logos/Css.astro'
+import Sass from './logos/Sass.astro'
+
 import Wordpress from './logos/Wordpress.astro'
 import SectionComponent from './SectionComponent.astro'
 
@@ -44,10 +48,25 @@ const TAGS = {
     icon: ViteJs,
     class: 'bg-[#646cff] text-white',
   },
+  HTML: {
+    name: 'HTML',
+    icon: Html,
+    class: 'bg-[#e34f26] text-white',
+  },
+  CSS: {
+    name: 'CSS',
+    icon: Css,
+    class: 'bg-[#1571AF] text-white',
+  },
   JAVASCRIPT: {
     name: 'JavaScript',
     icon: JavaScript,
     class: 'bg-[#F7DF1E] text-black',
+  },
+  SASS: {
+    name: 'SASS',
+    icon: Sass,
+    class: 'bg-[#cf649a] text-white',
   },
   NODEJS: {
     name: 'Node.js',
@@ -124,54 +143,45 @@ const { id } = Astro.props
 
 const PROJECTS = [
   {
-    title: 'SVGL - A beautiful library with SVG logos',
+    title: 'Bozeto',
     description:
-      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
-    link: 'https://svgl.vercel.app/',
-    github: 'https://github.com/pheralb/svgl',
-    image: '/projects/project1.png',
-    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+      'Plataforma de diseño intuitiva para seleccionar artículos personalizables con opciones de estampados predefinidos. Además, permite la carga de diseños personalizados, logrando posicionarlos en donde el usuario desee.',
+    link: 'https://drummes12.github.io/Bozeto/',
+    github: 'https://github.com/drummes12/Bozeto',
+    image: '/projects/bozeto-page.webp',
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
   {
-    title: 'SVGL - A beautiful library with SVG logos',
+    title: 'ToDo List',
     description:
-      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
-    link: 'https://svgl.vercel.app/',
-    github: 'https://github.com/pheralb/svgl',
-    image: '/projects/project1.png',
-    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+      'Aplicación de listas de tareas con funciones de crear, editar, eliminar y marcar tareas. Almacena datos en local storage para persistencia. Una herramienta eficiente y fácil de usar para organizar tus tareas diarias.',
+    link: 'https://todo-list-woad-zeta.vercel.app/',
+    github: 'https://github.com/drummes12/todo-list',
+    image: '/projects/todo-list.webp',
+    tags: [TAGS.NEXTJS, TAGS.REACT, TAGS.TAILWIND],
   },
   {
-    title: 'SVGL - A beautiful library with SVG logos',
+    title: 'Next Shop',
     description:
-      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
-    link: 'https://svgl.vercel.app/',
-    github: 'https://github.com/pheralb/svgl',
-    image: '/projects/project1.png',
-    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+      'E-commerce versátil que ofrece una amplia gama de productos, respaldado por un sistema de carrito de compras eficiente. Creditos a los cursos de Next.js de Platzi.',
+    link: 'https://next-shop-sooty.vercel.app/',
+    github: 'https://github.com/drummes12/next-shop',
+    image: '',
+    tags: [TAGS.NEXTJS, TAGS.REACT, TAGS.SASS],
   },
   {
-    title: 'SVGL - A beautiful library with SVG logos',
+    title: 'XKCD',
     description:
-      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
-    link: 'https://svgl.vercel.app/',
-    github: 'https://github.com/pheralb/svgl',
-    image: '/projects/project1.png',
-    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
-  },
-  {
-    title: 'SVGL - A beautiful library with SVG logos',
-    description:
-      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
-    link: 'https://svgl.vercel.app/',
-    github: 'https://github.com/pheralb/svgl',
-    image: '/projects/project1.png',
-    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.JAVASCRIPT],
+      'Reimaginación del sitio web de xkcd con un diseño renovado, paginación de cómics, internacionalización (i18n) para una experiencia multilingüe y potente búsqueda alimentada por Algolia. Reconocimiento especial a Midudev por su inspiración.',
+    link: 'https://xkcd-next12-app-nu.vercel.app/es',
+    github: 'https://github.com/drummes12/xkcd-next12-app',
+    image: '/projects/xkcd.webp',
+    tags: [TAGS.NEXTJS, TAGS.REACT, TAGS.TAILWIND],
   },
 ]
 ---
 
-<SectionComponent id={id} class="px-0">
+<SectionComponent id={id} class='px-0'>
   <Bulb />
   <header class='w-full max-w-[1400px] py-4 flex justify-end'>
     <h2 class='text-right font-extrabold [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] text-gray-500/90'>
@@ -179,7 +189,7 @@ const PROJECTS = [
     </h2>
   </header>
   <div
-    class='relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[35rem] sm:auto-rows-[30rem] gap-4 mx-auto p-4'
+    class='relative w-full max-w-[1400px] grid md:grid-cols-10 auto-rows-[35rem] sm:auto-rows-[35rem] gap-4 mx-auto p-4'
   >
     {
       PROJECTS.map((project, idx) => {

@@ -11,31 +11,31 @@ const { id } = Astro.props
 
 const EXPERIENCES = [
   {
-    title: 'Creador de Contenido',
-    company: 'Twitch',
+    title: 'Twilio Developer',
+    company: 'IZEI Consulting Group',
     location: '🌐',
-    startDate: '2023-Ene',
-    endDate: 'Actualidad',
+    startDate: '2022-Sept',
+    endDate: 'Actualmente',
     description:
-      'Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.',
+      'Desarrollo de soluciones de comunicación basadas en la plataforma Twilio, construyendo aplicaciones backend capaces de integrar, mejorar el rendimiento, y aumentar la utilidad de las APIs, además de construir plugins para el Contact Center, con un gran enfoque en el diseño de la interfaz de usuario (UI/UX) para aumentar las características de la herramienta.',
   },
   {
-    title: 'Principal Frontend Engineer',
-    company: 'Adevinta Spain',
-    location: '🇪🇸',
-    startDate: '2022-Ene',
-    endDate: '2023-Ene',
-    description:
-      'Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.',
-  },
-  {
-    title: 'Software Engineer Junior',
-    company: 'Clevertech',
+    title: 'Solutions Integration Engineer',
+    company: 'Interlat Group',
     location: '🇨🇴',
-    startDate: '2020-Ene',
-    endDate: '2020-Dic',
+    startDate: '2022-Ene',
+    endDate: '2022-Ago',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl quis aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc vitae nisl',
+      'Desarrollo de integraciones, con aplicaciones propias (Python, JavaScript, APIs, SQL) o tecnologías "no code", entre soluciones digitales de customer experience, data cloud, e-commerce, social media y todo lo relacionado para que una empresa logre con la mayor fiabilidad y facilidad una transformación digital. Diseño, desarrollo e implementación de software en .Net y C# para el control de enrolamiento e ingreso por medio de un sistema biométrico (PalmSecure - Fujitsu)',
+  },
+  {
+    title: 'Help Desk',
+    company: 'Datecsa',
+    location: '🇨🇴',
+    startDate: '2021-Feb',
+    endDate: '2021-Ago',
+    description:
+      'Soporte a clientes en la configuración y uso de impresoras Kyocera, además de la creación de archivos en Excel con macros, para el monitoreo y creación de informes de las impresoras rentadas por la empresa, disminuyendo esta labor manual hasta un 60% de tiempo, y un 90% de fiabilidad a este documento',
   },
 ]
 ---
@@ -44,7 +44,9 @@ const EXPERIENCES = [
   <Rotate />
   <div class='sm:pl-20 h-full w-full max-w-[1400px] flex flex-col mb-16'>
     <header class='flex w-full justify-end my-4'>
-      <h2 class='text-right font-extrabold [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] text-gray-500/90'>Experiencia</h2>
+      <h2 class='text-right font-extrabold [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] text-gray-500/90'>
+        Experiencia
+      </h2>
     </header>
     <ol class='relative text-right border-e border-white/90 max-md:backdrop-blur-sm md:bg-transparent w-full'>
       {EXPERIENCES.map((experience) => <ExperienceItem {...experience} />)}
