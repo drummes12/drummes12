@@ -10,12 +10,12 @@ const { class: className } = Astro.props
 ---
 
 <div class={`${className} relative w-full mx-auto py-8`}>
-  <div class='relative flex flex-col w-full gap-y-4 [--gap:1rem] [--duration:60s]'>
-    <div class='overflow-x-clip flex flex-row gap-[--gap] w-max font-dm-mono origin-left text-6xl font-bold group'>
+  <div class='relative flex flex-col w-full gap-y-1 [--gap:1rem] [--duration:60s] py-2'>
+    <div class='overflow-x-clip flex flex-row gap-[--gap] w-max origin-left h-12 sm:h-14 text-5xl sm:text-6xl font-bold group'>
       <LanguagesName />
       <LanguagesName />
     </div>
-    <div class='overflow-x-clip flex flex-row gap-[--gap] w-max group'>
+    <div class='overflow-x-clip flex flex-row  h-12 sm:h-14 gap-[--gap] w-max group'>
       <LanguagesLogo />
       <LanguagesLogo />
     </div>

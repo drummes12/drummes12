@@ -24,10 +24,6 @@ module.exports = {
         'mail': '#d44638',
         'link': '#00b0ff',
       },
-      fontFamily: {
-        'dm-mono': ['DM Mono', 'monospace'],
-        'rubik-mono': ['Rubik Mono One', 'monospace'],
-      },
       backgroundColor: {
         'neon1': '#00ff00',
         'neon2': '#ff00ff',
