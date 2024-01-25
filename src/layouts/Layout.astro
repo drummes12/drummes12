@@ -3,10 +3,9 @@ import NavBar from '@/components/NavBar.astro'
 
 interface Props {
   title: string
-  navBar?: boolean
 }
 
-const { title, navBar } = Astro.props
+const { title } = Astro.props
 ---
 
 <!doctype html>
@@ -20,7 +19,7 @@ const { title, navBar } = Astro.props
     <title>{title}</title>
   </head>
   <body class='overflow-x-hidden'>
-    {navBar && <NavBar />}
+    <NavBar />
     <main class='relative h-full w-full'>
       <slot />
     </main>
@@ -61,6 +60,7 @@ const { title, navBar } = Astro.props
 
   code {
     font-family:
+      'DM Mono',
       Menlo,
       Monaco,
       Lucida Console,
