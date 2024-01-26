@@ -17,25 +17,25 @@ const { class: className, href, title, color } = Astro.props
   aria-label={`Link to ${title}`}
 >
   <div
-    class={`absolute left-0 top-0 w-full h-1/4 bg-gradient-to-b to-transparent ${color} opacity-40 group-hover:opacity-80`}
+    class={`absolute left-0 top-0 w-full h-1/4 bg-gradient-to-b to-transparent ${color} opacity-80 sm:opacity-40 sm:group-hover:opacity-80`}
   >
   </div>
   <div
-    class={`absolute left-0 top-0 w-1/12 h-full bg-gradient-to-r to-transparent ${color} opacity-40 group-hover:opacity-80`}
+    class={`absolute left-0 top-0 w-1/12 h-full bg-gradient-to-r to-transparent ${color} opacity-80 sm:opacity-40 sm:group-hover:opacity-80`}
   >
   </div>
   <div
-    class={`absolute left-0 bottom-0 w-full h-1/4 bg-gradient-to-t to-transparent ${color} opacity-40 group-hover:opacity-80`}
+    class={`absolute left-0 bottom-0 w-full h-1/4 bg-gradient-to-t to-transparent ${color} opacity-80 sm:opacity-40 sm:group-hover:opacity-80`}
   >
   </div>
   <div
-    class={`absolute right-0 bottom-0 w-1/12 h-full bg-gradient-to-l to-transparent ${color} opacity-40 group-hover:opacity-80`}
+    class={`absolute right-0 bottom-0 w-1/12 h-full bg-gradient-to-l to-transparent ${color} opacity-80 sm:opacity-40 sm:group-hover:opacity-80`}
   >
   </div>
   <slot />
   {
     title && (
-      <span class='truncate text-sm sm:text-base font-semibold text-white/50 group-hover:text-white/90'>
+      <span class='truncate text-sm sm:text-base font-semibold text-white/90 sm:text-white/50 sm:group-hover:text-white/90'>
         {title}
       </span>
     )
