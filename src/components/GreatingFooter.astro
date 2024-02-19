@@ -1,9 +1,18 @@
+---
+const currentDate = new Date()
+const firstDateExperience = new Date('2021-02-01')
+
+const experience = Math.floor(
+  (Number(currentDate) - Number(firstDateExperience)) / (1000 * 60 * 60 * 24 * 365)
+)
+---
+
 <footer
-  class='flex-1 flex justify-end items-end m-8 w-5/6 max-w-[40ch] [font-size:_clamp(1rem,_0.737rem_+_1.404vw,_2rem)] animate-fade-right animate-once'
+  class='flex-1 flex justify-end items-end my-8 w-5/6 max-w-[40ch] [font-size:_clamp(1rem,_0.737rem_+_1.404vw,_2rem)] animate-fade-right animate-once'
 >
-  <div class='rounded-xl  p-4 md:p-8 bg-black/10 shadow-md shadow-black/80'>
+  <div class='rounded-xl p-4 md:p-8 bg-black/10 shadow-md shadow-black/80'>
     <p class='text-white/90'>
-      +2 años de experiencia.
+      +{experience} años de experiencia.
       <span class='text-red-200'>Ingeniero Mecatrónico y Desarrollador Web</span>. De
       <span class='text-green-200'>Bogotá, Colombia</span>. Creemos juntos algo increíble.
     </p>
