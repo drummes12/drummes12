@@ -18,9 +18,9 @@ const { id } = Astro.props
 
 <SectionComponent id={id}>
   <Flicker />
-  <main class='w-full h-min min-h-[100svh] flex flex-col md:justify-start pt-28'>
+  <div class='w-full h-min min-h-[100svh] flex flex-col md:justify-start pt-28'>
     <h1
-      class='[font-size:_clamp(5rem,_3.158rem_+_9.825vw,_12rem)] text-right font-extrabold leading-none animate-fade-left animate-once'
+      class='[font-size:_clamp(5rem,_3.158rem_+_9.825vw,_12rem)] text-right font-extrabold leading-none animate-fade-left animate-once mb-4'
     >
       hey,
       <span
@@ -47,5 +47,5 @@ const { id } = Astro.props
       </Button>
     </nav>
     <GreatingFooter />
-  </main>
+  </div>
 </SectionComponent>

@@ -10,7 +10,7 @@ const { class: className } = Astro.props
 ---
 
 <div class={`${className} relative w-full mx-auto py-8`}>
-  <div class='relative flex flex-col w-full gap-y-1 [--gap:1rem] [--duration:60s] py-2'>
+  <div class='languages relative flex flex-col w-full gap-y-1 [--gap:1rem] [--duration:60s]'>
     <div class='overflow-x-clip flex flex-row gap-[--gap] w-max origin-left h-12 sm:h-14 text-5xl sm:text-6xl font-bold group'>
       <LanguagesName />
       <LanguagesName />
@@ -19,7 +19,39 @@ const { class: className } = Astro.props
       <LanguagesLogo />
       <LanguagesLogo />
     </div>
-    <div class='absolute -left-1 top-0 h-full w-1/4 bg-gradient-to-r from-[#121212] to-transparent'></div>
-    <div class='absolute -right-1 top-0 h-full w-1/4 bg-gradient-to-l from-[#121212] to-transparent'></div>
   </div>
 </div>
+
+<style>
+  .languages {
+    --blur: 1px;
+    --from-color: #121212;
+    --lenght: 15%;
+  }
+
+  .languages::before {
+    z-index: 2;
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: var(--lenght);
+    backdrop-filter: blur(var(--blur));
+    mask: linear-gradient(to right, var(--from-color), transparent);
+    background: linear-gradient(to right, var(--from-color), transparent);
+  }
+
+  .languages::after {
+    z-index: 2;
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: var(--lenght);
+    backdrop-filter: blur(var(--blur));
+    mask: linear-gradient(to left, var(--from-color), transparent);
+    background: linear-gradient(to left, var(--from-color), transparent);
+  }
+</style>
