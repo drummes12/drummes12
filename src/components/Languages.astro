@@ -9,13 +9,19 @@ interface Props {
 const { class: className } = Astro.props
 ---
 
-<div class={`${className} relative w-full mx-auto py-8`}>
-  <div class='languages relative flex flex-col w-full gap-y-1 [--gap:1rem] [--duration:60s]'>
-    <div class='overflow-x-clip flex flex-row gap-[--gap] w-max origin-left h-12 sm:h-14 text-5xl sm:text-6xl font-bold group'>
+<div class={`${className} relative max-w-[1400px] w-full mx-auto py-8 px-8`}>
+  <div
+    class='languages relative flex flex-col w-full gap-y-1 [--gap:1rem] [--duration:60s]'
+  >
+    <div
+      class='overflow-x-clip flex flex-row gap-[--gap] w-max origin-left h-12 sm:h-14 text-5xl sm:text-6xl font-bold group'
+    >
       <LanguagesName />
       <LanguagesName />
     </div>
-    <div class='overflow-x-clip flex flex-row  h-12 sm:h-14 gap-[--gap] w-max group'>
+    <div
+      class='overflow-x-clip flex flex-row h-12 sm:h-14 gap-[--gap] w-max group'
+    >
       <LanguagesLogo />
       <LanguagesLogo />
     </div>
@@ -27,31 +33,12 @@ const { class: className } = Astro.props
     --blur: 1px;
     --from-color: #121212;
     --lenght: 15%;
-  }
-
-  .languages::before {
-    z-index: 2;
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: var(--lenght);
-    backdrop-filter: blur(var(--blur));
-    mask: linear-gradient(to right, var(--from-color), transparent);
-    background: linear-gradient(to right, var(--from-color), transparent);
-  }
-
-  .languages::after {
-    z-index: 2;
-    position: absolute;
-    content: '';
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: var(--lenght);
-    backdrop-filter: blur(var(--blur));
-    mask: linear-gradient(to left, var(--from-color), transparent);
-    background: linear-gradient(to left, var(--from-color), transparent);
+    mask: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 10%,
+      #000 90%,
+      transparent 100%
+    );
   }
 </style>
