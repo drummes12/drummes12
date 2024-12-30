@@ -20,27 +20,42 @@ const { id } = Astro.props
   <Flicker />
   <div class='w-full h-min min-h-[100svh] flex flex-col md:justify-start pt-28'>
     <h1
-      class='[font-size:_clamp(5rem,_3.158rem_+_9.825vw,_12rem)] text-right font-extrabold leading-none animate-fade-left animate-once mb-4'
+      class='[font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] text-right leading-none animate-fade-left animate-once mb-4'
     >
-      hey,
+      Hey,
       <span
-        class='text-right whitespace-nowrap [font-size:_clamp(3rem,_1.158rem_+_9.825vw,_10rem)] font-normal opacity-70 animate-fade-left animate-once overflow-hidden'
+        class='text-right whitespace-nowrap opacity-70 animate-fade-left animate-once overflow-hidden'
       >
-        Soy Esteban
+        soy
+        <strong class='font-extrabold'>Esteban</strong>
       </span>
     </h1>
-    <nav class='w-full flex gap-4 flex-wrap justify-end animate-fade-left animate-once'>
-      <Button href='https://www.linkedin.com/in/drummes12/' title='LinkedIn' color='from-linkedin'>
+    <nav
+      class='w-full flex gap-4 flex-wrap justify-end animate-fade-left animate-once'
+    >
+      <Button
+        href='https://www.linkedin.com/in/drummes12/'
+        title='LinkedIn'
+        color='from-linkedin'
+      >
         <LinkedIn
           class='size-6 sm:size-8 text-white/90 sm:text-white/50 sm:group-hover:text-white/90 sm:group-hover:scale-105 transition-all duration-300'
         />
       </Button>
-      <Button href='https://github.com/drummes12' title='GitHub' color='from-github'>
+      <Button
+        href='https://github.com/drummes12'
+        title='GitHub'
+        color='from-github'
+      >
         <GitHub
           class='size-6 sm:size-8 text-white/90 sm:text-white/50 sm:group-hover:text-white/90 sm:group-hover:scale-105 transition-all duration-300'
         />
       </Button>
-      <Button href='mailto:drummes.12@gmail.com' title='drummes.12@gmail.com' color='from-mail'>
+      <Button
+        href='mailto:drummes.12@gmail.com'
+        title='drummes.12@gmail.com'
+        color='from-mail'
+      >
         <Mail
           class='size-6 sm:size-8 text-white/90 sm:text-white/50 sm:group-hover:text-white/90 sm:group-hover:scale-105 transition-all duration-300'
         />
