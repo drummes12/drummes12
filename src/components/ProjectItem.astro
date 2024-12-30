@@ -19,7 +19,16 @@ interface Props {
   link?: string
 }
 
-const { class: className, size = 'sm', title, description, tags, image, github, link } = Astro.props
+const {
+  class: className,
+  size = 'sm',
+  title,
+  description,
+  tags,
+  image,
+  github,
+  link
+} = Astro.props
 ---
 
 <article
@@ -40,11 +49,15 @@ const { class: className, size = 'sm', title, description, tags, image, github, 
     >
       {description}
     </p>
-    <ul class='px-8 w-full flex flex-wrap gap-1 sm:contrast-75 sm:group-hover:contrast-100'>
+    <ul
+      class='px-8 w-full flex flex-wrap gap-1 sm:contrast-75 sm:group-hover:contrast-100'
+    >
       {
         tags.slice(0, 5).map((tag) => (
           <li>
-            <span class={`${tag.class} flex items-center gap-1 rounded-full text-xs sm:text-sm py-1 px-2`}>
+            <span
+              class={`${tag.class} flex items-center gap-1 rounded-full text-xs sm:text-sm py-1 px-2`}
+            >
               <tag.icon class='size-3' />
               {tag.name}
             </span>
@@ -52,7 +65,9 @@ const { class: className, size = 'sm', title, description, tags, image, github, 
         ))
       }
     </ul>
-    <div class={`flex-1 flex pt-8 justify-end ${size === 'sm' ? 'lg:justify-start' : 'lg:justify-end'}`}>
+    <div
+      class={`flex-1 flex pt-8 justify-end ${size === 'sm' ? 'lg:justify-start' : 'lg:justify-end'}`}
+    >
       <picture
         class={`relative w-3/4 overflow-hidden ${
           size === 'sm' ? 'lg:rounded-e-xl' : 'lg:rounded-s-xl'
@@ -68,24 +83,35 @@ const { class: className, size = 'sm', title, description, tags, image, github, 
         />
       </picture>
     </div>
-    <div class='absolute left-0 bottom-0 w-full h-full bg-gradient-to-t from-black to-25% to-transparent'></div>
+    <div
+      class='absolute left-0 bottom-0 w-full h-full bg-gradient-to-t from-black to-25% to-transparent'
+    >
+    </div>
+    <nav class='absolute left-0 bottom-0 w-full flex'>
+      {
+        github && (
+          <a
+            href={github}
+            target='_blank'
+            rel='noopener noreferrer'
+            class='w-full flex items-center justify-center py-4 opacity-90 sm:opacity-50 sm:hover:opacity-100 transition-all bg-gradient-to-t sm:hover:from-white/20 to-transparent border-r-[1px] border-white/20'
+          >
+            <GitHub class='size-8' />
+          </a>
+        )
+      }
+      {
+        link && (
+          <a
+            href={link}
+            target='_blank'
+            rel='noopener noreferrer'
+            class='w-full flex items-center justify-center py-4 opacity-90 sm:opacity-50 sm:hover:opacity-100 transition-all bg-gradient-to-t sm:hover:from-white/20 to-transparent border-l-[1px] border-white/20'
+          >
+            <Link class='size-8' />
+          </a>
+        )
+      }
+    </nav>
   </div>
-  <nav class='w-full flex gap-1'>
-    {
-      github && (
-        <>
-          <Button class='flex-1' href={github} color='from-black'>
-            <GitHub class='size-8 text-white/90  sm:text-white/50 sm:group-hover:text-white/90 group-hover:scale-105 transition' />
-          </Button>
-        </>
-      )
-    }
-    {
-      link && (
-        <Button class='flex-1' href={link} color='from-black'>
-          <Link class='size-8 text-white/90  sm:text-white/50 sm:group-hover:text-white/90 group-hover:scale-105 transition' />
-        </Button>
-      )
-    }
-  </nav>
 </article>
